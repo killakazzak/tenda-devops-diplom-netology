@@ -59,15 +59,29 @@
 yc iam service-accounts list
 ```
 
-![alt text](image-1.png)
+![alt text](image-3.png)
+
+#sa.tf
+
+
+
+```bash
+yc iam service-accounts list
+```
+
+![alt text](image-5.png)
+
+![alt text](image-4.png)
+
+
 
 Создаём авторизованный ключ для сервисного аккаунта и записываем его в файл key.json
 
 ```bash
-yc iam key create --output key.json --service-account-name tenda
+yc iam key create --output key.json --service-account-name sa-tenda
 ```
 
-![alt text](image-2.png)
+![alt text](image-6.png)
 
 
 

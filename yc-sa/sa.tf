@@ -1,5 +1,6 @@
 resource "yandex_iam_service_account" "sa-tenda" {
-  name = "sa-tenda"
+  name        = "sa-tenda"
+  description = "this is my favorite service account"
 }
 
 resource "yandex_resourcemanager_folder_iam_member" "editor" {

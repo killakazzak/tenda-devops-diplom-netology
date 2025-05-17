@@ -1,6 +1,6 @@
 variable "token" {
   type        = string
-  description = "Yandex Cloud OAuth token"
+  description = "Yandex Cloud AuthKey"
   sensitive   = true
 }
 
