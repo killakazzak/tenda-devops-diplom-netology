@@ -61,15 +61,18 @@ yc iam service-accounts list
 
 ![alt text](image-3.png)
 
-#sa.tf
+[sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
 
-
+```bash
+terraform init
+terraform validate
+terraform apply --auto-approve
+```
+![alt text](image-7.png)
 
 ```bash
 yc iam service-accounts list
 ```
-
-![alt text](image-5.png)
 
 ![alt text](image-4.png)
 
