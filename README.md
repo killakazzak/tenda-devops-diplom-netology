@@ -113,6 +113,8 @@ source .env
 yc storage bucket list
 ```
 
+![alt text](img/image11.png)
+
 ```bash
 terraform init
 terraform validate
