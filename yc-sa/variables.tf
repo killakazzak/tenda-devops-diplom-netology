@@ -28,3 +28,8 @@ variable "zone_b" {
   default     = "ru-central1-b"
 }
 
+variable "zone_d" {
+  type        = string
+  description = "Yandex Cloud default zone"
+  default     = "ru-central1-d"
+}
