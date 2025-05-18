@@ -76,7 +76,7 @@ yc iam service-accounts list
 
 ![alt text](image-3.png)
 
-Файл конфигурации [sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
+*Файл конфигурации* [sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
 
 ```bash
 terraform init
@@ -103,7 +103,21 @@ yc iam key create --output key.json --service-account-name sa-tenda
 
 ### Создание bucket в S3
 
-Файл конфигурации [bucket.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-bucket/bucket.tf)
+*Файл конфигурации* [bucket.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-bucket/bucket.tf)
+
+```bash
+terraform init
+terraform validate
+terraform apply --auto-approve
+```
+
+**Проверка**
+
+```bash
+yc storage bucket list
+```
+
+![alt text](image-8.png)
 
 ---
 ### Создание Kubernetes кластера
