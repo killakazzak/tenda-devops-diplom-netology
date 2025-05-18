@@ -83,13 +83,13 @@ terraform init
 terraform validate
 terraform apply --auto-approve
 ```
-![alt text](image-7.png)
+![alt text](img/image-7.png)
 
 ```bash
 yc iam service-accounts list
 ```
 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 Создание авторизованного ключа для сервисных аккаунтов и его запись в файл key.json
 
