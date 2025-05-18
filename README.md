@@ -66,7 +66,7 @@ curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
 yc init
 ```
 
-### Создание сервисного аккаунта
+### 1. Создание сервисного аккаунта администратора
 
 ### Проверка
 
@@ -76,7 +76,7 @@ yc iam service-accounts list
 
 ![alt text](image-3.png)
 
-[sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
+Файл конфигурации [sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
 
 ```bash
 terraform init
@@ -91,7 +91,7 @@ yc iam service-accounts list
 
 ![alt text](image-4.png)
 
-Создание авторизованного ключа для сервисного аккаунта и записываем его в файл key.json
+Создание авторизованного ключа для сервисных аккаунтов и его запись в файл key.json
 
 ```bash
 yc iam key create --output key.json --service-account-name sa-tenda
@@ -99,7 +99,11 @@ yc iam key create --output key.json --service-account-name sa-tenda
 
 ![alt text](image-6.png)
 
+### 2. Подготовка backend для Terraform:
 
+### Создание bucket в S3
+
+Файл конфигурации [bucket.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-bucket/bucket.tf)
 
 ---
 ### Создание Kubernetes кластера
