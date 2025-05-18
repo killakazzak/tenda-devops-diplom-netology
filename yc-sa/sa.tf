@@ -1,14 +1,10 @@
-resource "yandex_iam_service_account" "sa-tenda" {
+resource "yandex_iam_service_account" "sa-tenda-admin" {
   name        = "sa-tenda"
-  description = "this is my favorite service account"
+  description = "admin account"
 }
 
-resource "yandex_resourcemanager_folder_iam_member" "editor" {
+resource "yandex_resourcemanager_folder_iam_member" "sa-tenda-admin" {
   folder_id = var.folder_id
-  role      = "editor"
-  member    = "serviceAccount:${yandex_iam_service_account.sa-tenda.id}"
-}
-
-resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
-  service_account_id = yandex_iam_service_account.sa-tenda.id
+  role      = "admin"
+  member    = "serviceAccount:${yandex_iam_service_account.sa-tenda-admin.id}"
 }

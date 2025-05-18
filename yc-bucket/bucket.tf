@@ -27,6 +27,11 @@ resource "yandex_storage_bucket" "tenda-bucket" {
   access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
   secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
   bucket     = "tenda-bucket"
+  # Явная зависимость от назначения ролей
+  depends_on = [
+    yandex_resourcemanager_folder_iam_member.storage-editor,
+    yandex_resourcemanager_folder_iam_member.storage-admin
+  ]
   anonymous_access_flags {
     read = false
     list = false
