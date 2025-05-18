@@ -135,6 +135,14 @@ yc storage bucket list
 *Файл конфигурации* [backend.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/backend.tf)
 
 
+**Предварительная проверка**
+
+```bash
+yc vpc network list
+```
+
+![alt text](img/image12.png)
+
 ---
 ### Создание Kubernetes кластера
 
