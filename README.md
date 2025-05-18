@@ -97,7 +97,7 @@ yc iam service-accounts list
 yc iam key create --output key.json --service-account-name sa-tenda
 ```
 
-![alt text](image-6.png)
+![alt text](img/image-6.png)
 
 ### 2. Подготовка backend для Terraform:
 
@@ -117,7 +117,7 @@ terraform apply --auto-approve
 yc storage bucket list
 ```
 
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 ---
 ### Создание Kubernetes кластера
