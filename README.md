@@ -74,7 +74,7 @@ yc init
 yc iam service-accounts list
 ```
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 *Файл конфигурации* [sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
 
