@@ -60,6 +60,8 @@
 curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
 ```
 
+[**Иструкция**](https://yandex.cloud/ru/docs/cli/quickstart)
+
 ### Настройка профиля в Yandex Cloud
 
 ```bash
