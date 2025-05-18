@@ -18,18 +18,18 @@ variable "folder_id" {
 
 variable "zone_a" {
   type        = string
-  description = "Yandex Cloud default zone"
+  description = "Yandex Cloud A zone"
   default     = "ru-central1-a"
 }
 
 variable "zone_b" {
   type        = string
-  description = "Yandex Cloud default zone"
+  description = "Yandex Cloud B zone"
   default     = "ru-central1-b"
 }
 
 variable "zone_d" {
   type        = string
-  description = "Yandex Cloud default zone"
+  description = "Yandex Cloud D zone"
   default     = "ru-central1-d"
 }
