@@ -95,11 +95,6 @@ yc iam service-accounts list
 
 ![alt text](img/image-4.png)
 
-**Внимание:**в связи с тем, что переменные Terraform (var.*) нельзя использовать в блоке backend, а `ACCESS_KEY` и `SECRET_ACCESS_KEY` являются чувствительными данными, значения будем передавать через переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`
-
-```bash
-source .env
-```
 
 ### 2. Подготовка backend для Terraform:
 
@@ -130,10 +125,26 @@ yc storage bucket list
 ![alt text](img/image-8.png)
 
 
+**Внимание:**в связи с тем, что переменные Terraform (var.*) нельзя использовать в блоке backend, а `ACCESS_KEY` и `SECRET_ACCESS_KEY` являются чувствительными данными, значения будем передавать через переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`
+
+```bash
+source .env
+```
+
+
 ### 3. Создание конфигурации Terrafrom, для хранения terraform.state файла в ранее созданном бакете
 
 *Файл конфигурации* [backend.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/backend.tf)
 
+```bash
+terraform init
+terraform validate
+terraform apply --auto-approve
+```
+
+**Проверка**
+
+![alt text](img/image14.png)
 
 ### 4. Создание VPC с подсетями в разных зонах доступности
 
@@ -158,18 +169,22 @@ terraform apply --auto-approve
 
 ```bash
 yc vpc network list
+yc vpc subnet list
 ```
 
-**Итоговая проверка 1го этапа**
+![alt text](img/image13.png)
+
+
+**Итоговая проверка 1-го этапа**
 
 ```bash
 yc iam service-accounts list
 yc storage bucket list
 yc vpc network list
+yc vpc subnet list
 ```
 
-
-
+![alt text](img/image15.png)
 
 
 ---
