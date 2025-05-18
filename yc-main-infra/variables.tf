@@ -34,16 +34,9 @@ variable "zone_d" {
   default     = "ru-central1-d"
 }
 
-variable "subnet-zones" {
-  type    = list(string)
-  default = ["ru-central1-a", "ru-central1-b", "ru-central1-c"]
-}
-
-variable "cidr" {
-  type = map(list(string))
-  default = {
-    stage = ["10.10.1.0/24", "10.10.2.0/24", "10.10.3.0/24"]
-  }
+variable "vpc_name" {
+  type    = string
+  default = "tenda-net"
 }
 
 variable "key_file_path" {
