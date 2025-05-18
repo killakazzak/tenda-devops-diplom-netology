@@ -51,6 +51,21 @@
 1. Terraform сконфигурирован и создание инфраструктуры посредством Terraform возможно без дополнительных ручных действий, стейт основной конфигурации сохраняется в бакете или Terraform Cloud
 2. Полученная конфигурация инфраструктуры является предварительной, поэтому в ходе дальнейшего выполнения задания возможны изменения.
 
+
+### Настройка Yandex Cloud
+
+### Установка ПО для работы в CLI Yandex Cloud
+
+```bash
+curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
+```
+
+### Настройка профиля в Yandex Cloud
+
+```bash
+yc init
+```
+
 ### Создание сервисного аккаунта
 
 ### Проверка
@@ -76,9 +91,7 @@ yc iam service-accounts list
 
 ![alt text](image-4.png)
 
-
-
-Создаём авторизованный ключ для сервисного аккаунта и записываем его в файл key.json
+Создание авторизованного ключа для сервисного аккаунта и записываем его в файл key.json
 
 ```bash
 yc iam key create --output key.json --service-account-name sa-tenda
