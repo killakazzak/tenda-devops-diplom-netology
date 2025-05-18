@@ -130,10 +130,12 @@ yc storage bucket list
 ![alt text](img/image-8.png)
 
 
-### 3. Создание конфигурации Terrafrom, для хранения terraform.state файла в ранее созданном бакете `tenda-bucket`
+### 3. Создание конфигурации Terrafrom, для хранения terraform.state файла в ранее созданном бакете
 
 *Файл конфигурации* [backend.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/backend.tf)
 
+
+### 4. Создание VPC с подсетями в разных зонах доступности
 
 **Предварительная проверка**
 
@@ -142,6 +144,33 @@ yc vpc network list
 ```
 
 ![alt text](img/image12.png)
+
+*Файл конфигурации* [vpc.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/vpc.tf)
+
+
+```bash
+terraform init
+terraform validate
+terraform apply --auto-approve
+```
+
+**Проверка**
+
+```bash
+yc vpc network list
+```
+
+**Итоговая проверка 1го этапа**
+
+```bash
+yc iam service-accounts list
+yc storage bucket list
+yc vpc network list
+```
+
+
+
+
 
 ---
 ### Создание Kubernetes кластера
