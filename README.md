@@ -68,15 +68,13 @@ curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
 yc init
 ```
 
-### 1. Создание сервисного аккаунта администратора
+### 1. Создание сервисного аккаунта администратора и авторизационного ключа
 
-**Проверка**
+**Предварительная проверка**
 
 ```bash
 yc iam service-accounts list
 ```
-
-![alt text](img/image-3.png)
 
 *Файл конфигурации* [sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
 
@@ -87,25 +85,31 @@ terraform apply --auto-approve
 ```
 ![alt text](img/image-7.png)
 
+**Проверка**
+
 ```bash
 yc iam service-accounts list
 ```
 
 ![alt text](img/image-4.png)
 
-Создание авторизованного ключа для сервисных аккаунтов и его запись в файл key.json
+**Внимание:**в связи с тем, что переменные Terraform (var.*) нельзя использовать в блоке backend, а `ACCESS_KEY` и `SECRET_ACCESS_KEY` являются чувствительными данными, значения будем передавать через переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`
 
 ```bash
-yc iam key create --output key.json --service-account-name sa-tenda
+source .env
 ```
-
-![alt text](img/image-6.png)
 
 ### 2. Подготовка backend для Terraform:
 
 ### Создание bucket в S3
 
 *Файл конфигурации* [bucket.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-bucket/bucket.tf)
+
+**Предварительная проверка**
+
+```bash
+yc storage bucket list
+```
 
 ```bash
 terraform init
@@ -120,6 +124,12 @@ yc storage bucket list
 ```
 
 ![alt text](img/image-8.png)
+
+
+### 3. Создание конфигурации Terrafrom, для хранения terraform.state файла в ранее созданном бакете `tenda-bucket`
+
+*Файл конфигурации* [backend.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/backend.tf)
+
 
 ---
 ### Создание Kubernetes кластера
