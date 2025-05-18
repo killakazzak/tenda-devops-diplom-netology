@@ -10,13 +10,20 @@ resource "yandex_resourcemanager_folder_iam_member" "storage-editor" {
   member    = "serviceAccount:${yandex_iam_service_account.sa-tenda-storage.id}"
 }
 
+# Назначение роли storage.admin
+resource "yandex_resourcemanager_folder_iam_member" "storage-admin" {
+  folder_id = var.folder_id
+  role      = "storage.admin"
+  member    = "serviceAccount:${yandex_iam_service_account.sa-tenda-storage.id}"
+}
+
 # Создание статических ключей доступа
 resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
   service_account_id = yandex_iam_service_account.sa-tenda-storage.id
 }
 
 # Создание бакета
-resource "yandex_storage_bucket" "tenda-s3-bucket" {
+resource "yandex_storage_bucket" "tenda-bucket" {
   access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
   secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
   bucket     = "tenda-bucket"
