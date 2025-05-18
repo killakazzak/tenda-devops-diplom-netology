@@ -39,3 +39,14 @@ resource "yandex_storage_bucket" "tenda-bucket" {
   acl           = "private"
   force_destroy = true
 }
+
+# Экспорт ключей в переменные окружения
+resource "null_resource" "export_keys" {
+  provisioner "local-exec" {
+    command = <<-EOT
+      echo "export AWS_ACCESS_KEY_ID=${yandex_iam_service_account_static_access_key.sa-static-key.access_key}" >> .env
+      echo "export AWS_SECRET_ACCESS_KEY=${yandex_iam_service_account_static_access_key.sa-static-key.secret_key}" >> .env
+    EOT
+  }
+  depends_on = [yandex_iam_service_account_static_access_key.sa-static-key]
+}

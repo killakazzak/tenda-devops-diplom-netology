@@ -15,7 +15,7 @@ resource "yandex_iam_service_account_key" "sa-tenda-key" {
 
 resource "local_file" "sa-tenda-key-file" {
   content  = yandex_iam_service_account_key.sa-tenda-key.private_key
-  filename = "/home/tenda/tenda-devops-diplom-netology/key.json"
+  filename = "var.key_file_path"
 
   depends_on = [yandex_iam_service_account_key.sa-tenda-key]
 }

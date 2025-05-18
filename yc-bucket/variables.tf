@@ -33,3 +33,9 @@ variable "zone_d" {
   description = "Yandex Cloud default zone"
   default     = "ru-central1-d"
 }
+
+variable "key_file_path" {
+  type        = string
+  description = "Yandex Cloud default zone"
+  default     = "/home/tenda/tenda-devops-diplom-netology/key.json"
+}
