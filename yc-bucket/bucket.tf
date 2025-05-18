@@ -23,7 +23,7 @@ resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
 }
 
 # Создание бакета
-resource "yandex_storage_bucket" "tenda-bucket" {
+resource "yandex_storage_bucket" "tenda-s3-bucket" {
   access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
   secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
   bucket     = "tenda-bucket"

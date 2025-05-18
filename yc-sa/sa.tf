@@ -11,12 +11,18 @@ resource "yandex_resourcemanager_folder_iam_member" "sa-tenda-admin" {
 
 resource "yandex_iam_service_account_key" "sa-tenda-key" {
   service_account_id = yandex_iam_service_account.sa-tenda-admin.id
+  key_algorithm      = "RSA_2048"
 }
 
-resource "local_file" "sa-tenda-key-file" {
-  content  = yandex_iam_service_account_key.sa-tenda-key.private_key
-  filename = "var.key_file_path"
-
-  depends_on = [yandex_iam_service_account_key.sa-tenda-key]
+resource "local_file" "sa-key-file" {
+  filename = var.key_file_path
+  content = jsonencode({
+    "id"                 = yandex_iam_service_account_key.sa-tenda-key.id
+    "service_account_id" = yandex_iam_service_account.sa-tenda-admin.id
+    "private_key"        = yandex_iam_service_account_key.sa-tenda-key.private_key
+    "public_key"         = yandex_iam_service_account_key.sa-tenda-key.public_key
+  })
+  depends_on = [
+    yandex_iam_service_account_key.sa-tenda-key
+  ]
 }
-
