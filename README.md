@@ -220,7 +220,7 @@ yc vpc subnet list
 
 ### Создание Kubernetes кластера
 
-### 1. Создание ВМ в Yandec Cloud 
+### 1. Создание ВМ в Yandec Cloud  
 [В целях экономии ресурсов создаем 3 ВМ: 1 - master-ноду и 2 - worker-ноды]
 
 ### 2. Подготовка конфигурации Ansible
