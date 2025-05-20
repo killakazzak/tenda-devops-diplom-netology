@@ -87,6 +87,7 @@ export TF_VAR_token=$(yc iam create-token)
 ```
 
 ```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-sa
 terraform init
 terraform validate
 terraform apply --auto-approve
@@ -117,9 +118,11 @@ yc storage bucket list
 ![alt text](img/image11.png)
 
 ```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-bucket
 terraform init
 terraform validate
 terraform apply --auto-approve
+source .env
 ```
 
 **Проверка**
@@ -143,6 +146,7 @@ source .env
 *Файл конфигурации* [backend.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/backend.tf)
 
 ```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
 terraform init
 terraform validate
 terraform apply --auto-approve
