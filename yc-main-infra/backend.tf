@@ -1,11 +1,12 @@
 terraform {
   required_providers {
     yandex = {
-      source = "yandex-cloud/yandex"
+      source  = "yandex-cloud/yandex"
+      version = ">= 0.13.0"
     }
   }
   required_version = ">= 0.13"
-  
+
   backend "s3" {
     endpoints = {
       s3 = "https://storage.yandexcloud.net"

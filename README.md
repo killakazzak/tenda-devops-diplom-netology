@@ -80,6 +80,12 @@ yc iam service-accounts list
 
 *Файл конфигурации* [sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
 
+Генерация токена и добавление его в переменную `TF_VAR_token`
+
+```bash
+export TF_VAR_token=$(yc iam create-token)
+```
+
 ```bash
 terraform init
 terraform validate
