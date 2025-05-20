@@ -270,7 +270,7 @@ yc compute instance list
 
 ### 3. Установка Kubernetes
 
-Установка kubernetes на 
+Установка кластера с помощью `kuberspay`
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra/kubespray
