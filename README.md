@@ -239,6 +239,28 @@ yc vpc subnet list
 
 ### 3. Установка Kubernetes
 
+
+Отключение проверки TLS-сертификата.
+
+**⚠️ Внимание!!! Это небезопасно**
+
+Отключение проверки TLS делает соединение уязвимым к MITM-атакам (злоумышленник может перехватить трафик).
+
+Не использовать в продакшене!
+
+```bash
+kubectl config set-cluster cluster.local --insecure-skip-tls-verify=true
+```
+
+**Проверка работоспособности и доступности kubernetes кластера**
+
+```bash
+kubectl get nodes
+kubectl get pods -A
+```
+
+![alt text](img/image20.png)
+
 ---
 ### Создание тестового приложения
 
