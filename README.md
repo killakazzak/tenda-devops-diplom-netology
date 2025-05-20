@@ -87,6 +87,7 @@ export TF_VAR_token=$(yc iam create-token)
 ```
 
 ```bash
+export TF_VAR_token=$(yc iam create-token)
 cd /home/tenda/tenda-devops-diplom-netology/yc-sa
 terraform init
 terraform validate
