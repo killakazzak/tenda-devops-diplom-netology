@@ -12,3 +12,7 @@ output "all_vm" {
     }]
   ])
 }
+
+output "api_endpoint" {
+  value = yandex_compute_instance.control-plane[0].network_interface[0].nat_ip_address
+}

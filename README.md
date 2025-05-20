@@ -277,12 +277,15 @@ pip install -r requirements.txt
 ansible-playbook -i inventory/mycluster/inventory-default.ini cluster.yml -b -v
 ```
 
-
-
 ```bash
 mkdir ~/.kube/
 ssh ubuntu@158.160.113.230 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
 ~/.kube/config
+```
+
+```bash
+export API_ENDPOINT=$(terraform output -raw api_endpoint)
+sed -i "s/127.0.0.1/$API_ENDPOINT/g" ~/.kube/config
 ```
 
 Отключение проверки TLS-сертификата.
