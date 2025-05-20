@@ -78,7 +78,8 @@ yc iam service-accounts list
 
 ![alt text](img/image10.png)
 
-*Файл конфигурации* [sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
+*Файл конфигурации* 
+- [sa.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-sa/sa.tf)
 
 Генерация токена и добавление его в переменную `TF_VAR_token`
 
@@ -108,7 +109,8 @@ yc iam service-accounts list
 
 ### Создание bucket в S3
 
-*Файл конфигурации* [bucket.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-bucket/bucket.tf)
+*Файл конфигурации* 
+- [bucket.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-bucket/bucket.tf)
 
 **Предварительная проверка**
 
@@ -144,7 +146,8 @@ source .env
 
 ### 3. Создание конфигурации Terrafrom, для хранения terraform.state файла в ранее созданном бакете
 
-*Файл конфигурации* [backend.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/backend.tf)
+*Файл конфигурации* 
+- [backend.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/backend.tf)
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
@@ -167,7 +170,8 @@ yc vpc network list
 
 ![alt text](img/image12.png)
 
-*Файл конфигурации* [network.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/network.tf)
+*Файл конфигурации* 
+- [network.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/network.tf)
 
 
 ```bash
@@ -239,6 +243,14 @@ yc vpc subnet list
 - [vm.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/vm.tf)
 - [outputs.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/outputs.tf)
 
+### 2. Подготовка конфигурации Ansible
+
+*Файл конфигурации* 
+- [ansible.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/ansible.tf)
+
+*Файл шаблона*
+- [inventory.tpl](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/templates/inventory.tpl) 
+
 ```bash
 cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
 terraform init
@@ -254,12 +266,7 @@ yc compute instance list
 
 ![alt text](img/image18.png)
 
-
-
-### 2. Подготовка конфигурации Ansible
-
-
-
+![alt text](img/image19.png)
 
 ### 3. Установка Kubernetes
 

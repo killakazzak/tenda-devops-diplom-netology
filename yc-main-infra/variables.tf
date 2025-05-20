@@ -27,3 +27,15 @@ variable "cidr" {
     stage = ["10.10.1.0/24", "10.10.2.0/24", "10.10.3.0/24"]
   }
 }
+
+variable "ssh_public_key" {
+  description = "SSH public key"
+  type        = string
+  default     = ""
+}
+
+variable "ssh_private_key" {
+  description = "SSH private key"
+  type        = string
+  default     = ""
+}

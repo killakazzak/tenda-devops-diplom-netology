@@ -1,4 +1,4 @@
-#cloud-init-config
+#cloud-config
 users:
   - name: ubuntu
     groups: sudo
@@ -16,6 +16,7 @@ packages:
   - curl
   - gnupg
   - lsb-release
+  - traceroute
   - unattended-upgrades
 
 runcmd:
