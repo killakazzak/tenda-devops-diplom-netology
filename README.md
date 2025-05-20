@@ -279,7 +279,7 @@ ansible-playbook -i inventory/mycluster/inventory-default.ini cluster.yml -b -v
 
 ```bash
 mkdir ~/.kube/
-ssh ubuntu@158.160.113.230 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
+ssh ubuntu@$API_ENDPOINT "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
 ~/.kube/config
 ```
 
