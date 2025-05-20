@@ -270,12 +270,15 @@ yc compute instance list
 
 ### 3. Установка Kubernetes
 
+Установка kubernetes на 
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra/kubespray
 pip install -r requirements.txt
 ansible-playbook -i inventory/mycluster/inventory-default.ini cluster.yml -b -v
 ```
+
+Копирование файла `kubeconfig` на локальный хост.
 
 ```bash
 mkdir ~/.kube/
