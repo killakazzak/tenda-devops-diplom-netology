@@ -284,6 +284,7 @@ ssh ubuntu@158.160.113.230 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/confi
 ```
 
 ```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra/
 export API_ENDPOINT=$(terraform output -raw api_endpoint)
 sed -i "s/127.0.0.1/$API_ENDPOINT/g" ~/.kube/config
 ```
