@@ -306,7 +306,13 @@ ssh ubuntu@$API_ENDPOINT "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
 kubectl config set-cluster cluster.local --insecure-skip-tls-verify=true
 ```
 
-**Проверка работоспособности и доступности kubernetes кластера**
+![alt text](img/image21.png)
+
+**Результаты**
+
+- Настроен и сконфигурирован работоспособный Kubernetes кластер (kuberspray)
+- В файле ~/.kube/config находятся данные для доступа к кластеру
+- Команда kubectl get pods --all-namespaces отрабатывает без ошибок.
 
 ```bash
 kubectl get nodes
