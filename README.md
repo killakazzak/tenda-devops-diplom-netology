@@ -167,10 +167,11 @@ yc vpc network list
 
 ![alt text](img/image12.png)
 
-*Файл конфигурации* [vpc.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/vpc.tf)
+*Файл конфигурации* [network.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/network.tf)
 
 
 ```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
 terraform init
 terraform validate
 terraform apply --auto-approve
@@ -231,14 +232,51 @@ yc vpc subnet list
 
 ### Создание Kubernetes кластера
 
-### 1. Создание ВМ в Yandec Cloud  
+### 1. Создание ВМ в разных зонах доступности
 [В целях экономии ресурсов создаем 3 ВМ: 1 - master-ноду и 2 - worker-ноды]
+
+*Файлы конфигурации* 
+- [vm.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/vm.tf)
+- [outputs.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/outputs.tf)
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
+terraform init
+terraform validate
+terraform apply --auto-approve
+```
+
+**Проверка**
+
+```bash
+yc compute instance list
+```
+
+![alt text](img/image18.png)
+
+
 
 ### 2. Подготовка конфигурации Ansible
 
 
+
+
 ### 3. Установка Kubernetes
 
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra/kubespray
+pip install -r requirements.txt
+ansible-playbook -i inventory/mycluster/inventory-default.ini cluster.yml -b -v
+```
+
+
+
+```bash
+mkdir ~/.kube/
+ssh ubuntu@158.160.113.230 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
+~/.kube/config
+```
 
 Отключение проверки TLS-сертификата.
 
