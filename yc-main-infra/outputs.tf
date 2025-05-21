@@ -16,3 +16,10 @@ output "all_vm" {
 output "api_endpoint" {
   value = yandex_compute_instance.control-plane[0].network_interface[0].nat_ip_address
 }
+
+output "worker_ip" {
+  value = [
+    yandex_compute_instance.data-plane[0].network_interface[0].ip_address,
+    yandex_compute_instance.data-plane[1].network_interface[0].ip_address
+  ]
+}
