@@ -445,8 +445,9 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 - Сохранение и редактирование значений по умолчанию в файл `prometheus-values.yaml`
 
 ```bash
-mkdir -p helm
-helm show values prometheus-community/kube-prometheus-stack > helm/prometheus-values.yaml
+/home/tenda/tenda-devops-diplom-netology
+mkdir -p k8s
+helm show values prometheus-community/kube-prometheus-stack > k8s/prometheus-values.yaml
 ```
 
 Редактирование файла `helm/prometheus-values.yaml`
@@ -464,15 +465,14 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 - Сохранение и редактирование значений по умолчанию в файл `ingress-values.yaml`
 
 ```bash
-helm show values ingress-nginx --repo https://kubernetes.github.io/ingress-nginx > helm/ingress-values.yaml
+cd /home/tenda/tenda-devops-diplom-netology
+helm show values ingress-nginx --repo https://kubernetes.github.io/ingress-nginx > k8s/ingress-values.yaml
 ```
 
-- Установка Ingress-Nginx контроллера (с помощью helm)
+- Установка Ingress-Nginx контроллера
 
 ```bash
-helm upgrade --install ingress-nginx ingress-nginx \
-  --repo https://kubernetes.github.io/ingress-nginx \
-  --namespace ingress-nginx --create-namespace
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.2/deploy/static/provider/cloud/deploy.yaml
 ```
 
 ---
