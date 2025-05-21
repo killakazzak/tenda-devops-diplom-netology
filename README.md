@@ -444,13 +444,20 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 ```bash
 mkdir -p helm
-helm show values prometheus-community/kube-prometheus-stack > helm/values.yaml
+helm show values prometheus-community/kube-prometheus-stack > helm/prometheus-values.yaml
 ```
 
-Редактирование файла `helm/values.yaml`
+Редактирование файла `helm/prometheus-values.yaml`
 
 
 
+- Добавление helm-репозитория для установки Ingress конроллера
+
+```bash
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+```
+
+![alt text](img/image42.png)
 
 ---
 ### Установка и настройка CI/CD
