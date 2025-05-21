@@ -339,6 +339,69 @@ kubectl get pods -A
 1. Git репозиторий с тестовым приложением и Dockerfile.
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
 
+### Создание тестового приложения
+
+- Создание отдельного git-репозиторий. Ссылка на репозиторий: https://github.com/killakazzak/tenda-devops-diplom-app.git
+
+![alt text](img/image31.png)
+
+- Клонирование репозитория на локальный ПК
+
+```bash
+git clone git@github.com:killakazzak/tenda-devops-diplom-app.git
+```
+![alt text](img/image32.png)
+
+- Подготовлен Dockerfile
+
+```Dockerfile
+FROM nginx:1.28.0
+RUN rm -rf /usr/share/nginx/html/*
+COPY content/ /usr/share/nginx/html/
+EXPOSE 80
+```
+
+- Создание образа
+
+```bash
+docker build -t killakazzak/tenda-devops-app:0.1 .
+```
+
+![alt text](img/image33.png)
+
+**Проверка**
+
+```bash
+docker images
+```
+
+![alt text](img/image37.png)
+
+- Авторизация на github.com
+
+Создание Personal access token
+
+![alt text](img/image34.png)
+
+![alt text](img/image35.png)
+
+```bash
+docker login -u killakazzak
+```
+
+![alt text](img/image36.png)
+
+- Публикация образа
+
+```bash
+docker push killakazzak/tenda-devops-app:0.1
+```
+
+![alt text](img/image38.png)
+
+
+![alt text](img/image39.png)
+
 ---
 ### Подготовка cистемы мониторинга и деплой приложения
 
