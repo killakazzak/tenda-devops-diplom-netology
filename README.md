@@ -278,20 +278,22 @@ pip install -r requirements.txt
 ansible-playbook -i inventory/mycluster/inventory-default.ini cluster.yml -b -v
 ```
 
+Копирование файла `kubeconfig` на локальный хост.
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra/
+mkdir -p ~/.kube/
+export API_ENDPOINT=$(terraform output -raw api_endpoint)
+ssh ubuntu@$API_ENDPOINT "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
+~/.kube/config
+```
+
 Изменение `kubeconfig`
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra/
 export API_ENDPOINT=$(terraform output -raw api_endpoint)
 sed -i "s/127.0.0.1/$API_ENDPOINT/g" ~/.kube/config
-```
-
-Копирование файла `kubeconfig` на локальный хост.
-
-```bash
-mkdir ~/.kube/
-ssh ubuntu@$API_ENDPOINT "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
-~/.kube/config
 ```
 
 Отключение проверки TLS-сертификата.
@@ -440,7 +442,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 ![alt text](img/image41.png)
 
-- Сохранение и редактирование значений по умолчанию в файл `values.yaml`
+- Сохранение и редактирование значений по умолчанию в файл `prometheus-values.yaml`
 
 ```bash
 mkdir -p helm
@@ -458,6 +460,20 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 ```
 
 ![alt text](img/image42.png)
+
+- Сохранение и редактирование значений по умолчанию в файл `ingress-values.yaml`
+
+```bash
+helm show values ingress-nginx --repo https://kubernetes.github.io/ingress-nginx > helm/ingress-values.yaml
+```
+
+- Установка Ingress-Nginx контроллера (с помощью helm)
+
+```bash
+helm upgrade --install ingress-nginx ingress-nginx \
+  --repo https://kubernetes.github.io/ingress-nginx \
+  --namespace ingress-nginx --create-namespace
+```
 
 ---
 ### Установка и настройка CI/CD
