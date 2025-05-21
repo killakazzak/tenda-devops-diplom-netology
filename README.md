@@ -429,6 +429,15 @@ docker push killakazzak/tenda-devops-app:0.1
 3. Дашборды в grafana отображающие состояние Kubernetes кластера.
 4. Http доступ на 80 порту к тестовому приложению.
 5. Atlantis или terraform cloud или ci/cd-terraform
+
+### Подготовка cистемы мониторинга и деплой приложения
+
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+
+![alt text](img/image41.png)
+
 ---
 ### Установка и настройка CI/CD
 
