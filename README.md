@@ -432,11 +432,25 @@ docker push killakazzak/tenda-devops-app:0.1
 
 ### Подготовка cистемы мониторинга и деплой приложения
 
+- Добавление helm-репозитория для установки `Prometheus` и `Grafana`
+
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 ```
 
 ![alt text](img/image41.png)
+
+- Сохранение и редактирование значений по умолчанию в файл `values.yaml`
+
+```bash
+mkdir -p helm
+helm show values prometheus-community/kube-prometheus-stack > helm/values.yaml
+```
+
+Редактирование файла `helm/values.yaml`
+
+
+
 
 ---
 ### Установка и настройка CI/CD
