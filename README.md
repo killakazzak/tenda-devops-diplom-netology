@@ -454,7 +454,7 @@ helm show values prometheus-community/kube-prometheus-stack > /home/tenda/tenda-
 - Редактирование файла [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
 
 ```bash
-sed -i '/portName: http-web/a\    type: NodePort\    \n    nodePort: 30050' /home/tenda/tenda-devops-diplom-netology/8s/prometheus-values.yaml
+sed -i '/portName: http-web/a\    type: NodePort\    \n    nodePort: 30050' /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
 ```
 
 ```yaml
