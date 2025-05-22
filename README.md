@@ -278,6 +278,8 @@ pip install -r requirements.txt
 ansible-playbook -i inventory/mycluster/inventory-default.ini cluster.yml -b -v
 ```
 
+![alt text](img/image191.png)
+
 Копирование файла `kubeconfig` на локальный хост.
 
 ```bash
