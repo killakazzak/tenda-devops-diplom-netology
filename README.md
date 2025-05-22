@@ -588,6 +588,11 @@ yc load-balancer network-load-balancer list
 
 ### Установка и настройка CI/CD
 
+- CI/CD на базе GitLab CI
+
+- Создание нового репозитория. Ссылка на репозиторий [tenda-devops-diplom-app-cicd](https://gitlab.com/denis.a.ten/tenda-devops-diplom-app-cicd#)
+- Клонирование репозитория на локальный ПК
+
 ```bash
 git clone git@gitlab.com:denis.a.ten/tenda-devops-diplom-app-cicd.git
 cd tenda-devops-diplom-app-cicd
@@ -598,6 +603,10 @@ git commit -m "add README"
 git push --set-upstream origin main
 ```
 
+![alt text](img/image50.png)
+
+- Добавление удаленного репозитория с именем origin
+
 ```bash
 git init --initial-branch=main
 git remote add origin git@gitlab.com:denis.a.ten/tenda-devops-diplom-app-cicd.git
@@ -605,6 +614,25 @@ git add .
 git commit -m "Initial commit"
 git push --set-upstream origin main
 ```
+![alt text](img/image51.png)
+
+- Копирование тестового приложения в новый репозиторий
+
+```bash
+cd /home/tenda/tenda-devops-diplom-app-cicd
+rsync -av --exclude='.git' ../tenda-devops-diplom-app/ ./
+```
+
+![alt text](img/image52.png)
+
+```bash
+cd /home/tenda/tenda-devops-diplom-app-cicd
+git add .
+git commit -m "update"
+git push
+```
+
+![alt text](img/image53.png)
 
 
 ---
