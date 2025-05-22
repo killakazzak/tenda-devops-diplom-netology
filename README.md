@@ -505,6 +505,7 @@ kubectl create namespace tenda
 - Применение манифестов [deployment.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/deployment.yaml) и [service.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/service.yaml)
 
 ```bash
+cd /home/tenda/tenda-devops-diplom-netology/k8s
 kubectl apply -f deployment.yaml -f service.yaml -n tenda
 ```
 
