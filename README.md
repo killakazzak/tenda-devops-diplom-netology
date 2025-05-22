@@ -466,7 +466,7 @@ service:
     ipFamilyPolicy: ""
 ```
 
-- Установка системы мониторинга
+### Установка системы мониторинга
 
 ```bash
 helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f prometheus-values.yaml
@@ -491,7 +491,7 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.2/deploy/static/provider/cloud/deploy.yaml
 ```
 
-- Развёртывание тестового приложения
+### Развёртывание тестового приложения
 
 - Создание namespace `tenda`
 
