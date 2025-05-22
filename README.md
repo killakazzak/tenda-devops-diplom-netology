@@ -552,7 +552,7 @@ yc load-balancer network-load-balancer list
 - [deployment.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/deployment.yaml)
 - [service.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/service.yaml)
 
-Сылка: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/k8s
+Ссылка: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/k8s
 
 2. Web-интерфейс Grafana доступен по http на 80 порту
 
