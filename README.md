@@ -447,12 +447,24 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 ```bash
 /home/tenda/tenda-devops-diplom-netology
 mkdir -p k8s
-helm show values prometheus-community/kube-prometheus-stack > k8s/prometheus-values.yaml
+helm show values prometheus-community/kube-prometheus-stack > /home/tenda/tenda-devops-diplom-netology/8s/prometheus-values.yaml
 ```
 
-Редактирование файла `helm/prometheus-values.yaml`
+- Редактирование файла `/home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml`
 
 
+- Установка системы мониторинга
+
+```bash
+helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f prometheus-values.yaml
+```
+
+Получение пароля
+
+```bash
+kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+```
+![alt text](img/image43.png)
 
 - Добавление helm-репозитория для установки Ingress конроллера
 
@@ -474,6 +486,47 @@ helm show values ingress-nginx --repo https://kubernetes.github.io/ingress-nginx
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.2/deploy/static/provider/cloud/deploy.yaml
 ```
+
+- Развёртывание тестового приложения
+
+- Создание namespace `tenda`
+
+```bash
+kubectl create namespace tenda
+```
+![alt text](img/image44.png)
+
+- Применение манифестов
+
+```bash
+kubectl apply -f deployment.yaml -f service.yaml -n tenda
+```
+
+![alt text](img/image45.png)
+
+**Проверка**
+
+```bash
+kubectl get pods -n tenda
+```
+
+![alt text](img/image46.png)
+
+```bash
+kubectl get svc -A
+```
+
+![alt text](img/image47.png)
+
+**Результаты**
+1. Git репозиторий с конфигурационными файлами для настройки Kubernetes.
+
+
+
+2. Http доступ на 80 порту к web интерфейсу grafana.
+3. Дашборды в grafana отображающие состояние Kubernetes кластера.
+4. Http доступ на 80 порту к тестовому приложению.
+5. Atlantis или terraform cloud или ci/cd-terraform
 
 ---
 ### Установка и настройка CI/CD

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tenda-web-app
+  namespace: tenda
+  labels:
+    app: tenda-web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tenda-web-app
+  template:
+    metadata:
+      labels:
+        app: tenda-web-app
+    spec:
+      containers:
+      - name: tenda-devops-app
+        image: killakazzak/tenda-devops-app:0.1
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "100Mi"
+          limits:
+            cpu: "500m"
+            memory: "100Mi"
+        ports:
+        - containerPort: 80
