@@ -487,11 +487,25 @@ kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.dat
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 ```
 
-- Установка Ingress-Nginx контроллера
+- Установка Ingress-Nginx контроллера (Версия Helm 3.18.0 для установки не подходит (баг))
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.2/deploy/static/provider/cloud/deploy.yaml
+helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx   --namespace ingress-nginx   --create-namespace   -f ingress-values.yaml
 ```
+
+**Проверка установки Helm**
+
+```bash
+kubectl get pods -n ingress-nginx
+```
+
+![alt text](img/image494.png)
+
+```bash
+kubectl get svc -n ingress-nginx
+```
+
+![alt text](img/image495.png)
 
 ### Развёртывание тестового приложения
 

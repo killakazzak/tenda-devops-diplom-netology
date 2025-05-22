@@ -2,7 +2,7 @@ imagePullPolicy: IfNotPresent
 revisionHistoryLimit: 3
 gitlabUrl: https://gitlab.com
 terminationGracePeriodSeconds: 3600
-concurrent: 3
+concurrent: 10
 checkInterval: 5
 logLevel: debug
 logFormat: json
