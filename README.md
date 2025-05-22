@@ -539,7 +539,6 @@ Grafana доступна по 80 порту
 
 ![alt text](img/image491.png)
 
-5. Atlantis или terraform cloud или ci/cd-terraform
 
 ---
 ### Установка и настройка CI/CD
