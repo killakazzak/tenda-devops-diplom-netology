@@ -522,6 +522,26 @@ kubectl get svc -A
 
 ![alt text](img/image47.png)
 
+- Добавление балансировщика в инфраструктуру
+
+*Файл конфигурации* 
+- [lb.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/lb.tf)
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
+terraform init
+terraform validate
+terraform apply --auto-approve
+```
+
+**Проверка**
+
+```bash
+yc load-balancer network-load-balancer list
+```
+
+![alt text](img/image492.png)
+
 **Результаты**
 1. Создан Git репозиторий с конфигурационными файлами для настройки Kubernetes. Сылка: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/k8s
 
