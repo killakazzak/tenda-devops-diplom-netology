@@ -442,7 +442,8 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 ![alt text](img/image41.png)
 
-- Сохранение и редактирование значений по умолчанию в файл `prometheus-values.yaml`
+- Сохранение и редактирование значений по умолчанию в файл [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
+
 
 ```bash
 /home/tenda/tenda-devops-diplom-netology
@@ -450,7 +451,7 @@ mkdir -p k8s
 helm show values prometheus-community/kube-prometheus-stack > /home/tenda/tenda-devops-diplom-netology/8s/prometheus-values.yaml
 ```
 
-- Редактирование файла `/home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml`
+- Редактирование файла [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
 
 
 - Установка системы мониторинга
@@ -472,15 +473,6 @@ kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.dat
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 ```
 
-![alt text](img/image42.png)
-
-- Сохранение и редактирование значений по умолчанию в файл `ingress-values.yaml`
-
-```bash
-cd /home/tenda/tenda-devops-diplom-netology
-helm show values ingress-nginx --repo https://kubernetes.github.io/ingress-nginx > k8s/ingress-values.yaml
-```
-
 - Установка Ingress-Nginx контроллера
 
 ```bash
@@ -496,7 +488,7 @@ kubectl create namespace tenda
 ```
 ![alt text](img/image44.png)
 
-- Применение манифестов
+- Применение манифестов [deployment.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/deployment.yaml) и [service.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/service.yaml)
 
 ```bash
 kubectl apply -f deployment.yaml -f service.yaml -n tenda
@@ -531,7 +523,7 @@ Grafana доступна по 80 порту
 
 ![alt text](img/image49.png)
 
-4. Http доступ на 80 порту к тестовому приложению.
+4. Тестовое приложение доступно по Http доступ на 80 порту.
 
 ![alt text](img/image491.png)
 
