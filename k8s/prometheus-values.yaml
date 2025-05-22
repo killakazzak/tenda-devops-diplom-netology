@@ -1457,8 +1457,6 @@ grafana:
   ##
   service:
     portName: http-web
-    type: NodePort
-    nodePort: 30050
     ipFamilies: []
     ipFamilyPolicy: ""
 

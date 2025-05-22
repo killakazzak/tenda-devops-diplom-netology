@@ -446,9 +446,9 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 
 ```bash
-/home/tenda/tenda-devops-diplom-netology
+cd /home/tenda/tenda-devops-diplom-netology
 mkdir -p k8s
-helm show values prometheus-community/kube-prometheus-stack > /home/tenda/tenda-devops-diplom-netology/8s/prometheus-values.yaml
+helm show values prometheus-community/kube-prometheus-stack > /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
 ```
 
 - Редактирование файла [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
