@@ -367,6 +367,7 @@ EXPOSE 80
 - Создание образа
 
 ```bash
+cd /home/tenda/tenda-devops-diplom-app
 docker build -t killakazzak/tenda-devops-app:0.1 .
 ```
 
