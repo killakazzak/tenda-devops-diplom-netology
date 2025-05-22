@@ -546,9 +546,7 @@ yc load-balancer network-load-balancer list
 **Результаты**
 1. Создан Git репозиторий с конфигурационными файлами для настройки Kubernetes. Сылка: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/k8s
 
-2. Http доступ на 80 порту к web интерфейсу grafana.
-
-Grafana доступна по 80 порту
+2. Web-интерфейс Grafana доступен по http на 80 порту
 
 ![alt text](img/image48.png)
 
@@ -556,7 +554,7 @@ Grafana доступна по 80 порту
 
 ![alt text](img/image49.png)
 
-4. Тестовое приложение доступно по Http доступ на 80 порту.
+4. Тестовое приложение доступно по http на 80 порту.
 
 ![alt text](img/image491.png)
 
