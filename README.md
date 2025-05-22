@@ -533,6 +533,7 @@ terraform init
 terraform validate
 terraform apply --auto-approve
 ```
+![alt text](image.png)
 
 **Проверка**
 
