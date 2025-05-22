@@ -644,17 +644,24 @@ git push
 ![alt text](img/image55.png)
 
 
-- Создание namespace для GitLab Runner
+- Создание namespace для `GitLab Runner`
 
 ```bash
 kubectl create ns gitlab-runner
 ```
 
-- Создание secret для регистрации GitLab Runner
+- Создание secret для регистрации `GitLab Runner`
 
 ```bash
 export GITLAB_RUNNER_TOKEN="значение_токена"
 kubectl --namespace=gitlab-runner create secret generic runner-secret --from-literal=runner-registration-token="$GITLAB_RUNNER_TOKEN" --from-literal=runner-token=""
+```
+
+- Установка с помощью Helm `GitLab Runner` 
+
+```bash
+helm repo add gitlab https://charts.gitlab.io
+helm install gitlab-runner gitlab/gitlab-runner -n gitlab-runner -f https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/gitlab-runner-values.yaml
 ```
 
 ---
