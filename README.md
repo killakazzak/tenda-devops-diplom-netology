@@ -636,6 +636,10 @@ git push
 
 ![alt text](img/image54.png)
 
+- Создание и регистрация Gitlab Runner
+
+![alt text](img/image55.png)
+
 ---
 ## Что необходимо для сдачи задания?
 
