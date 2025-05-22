@@ -585,6 +585,28 @@ yc load-balancer network-load-balancer list
 2. При любом коммите в репозиторие с тестовым приложением происходит сборка и отправка в регистр Docker образа.
 3. При создании тега (например, v1.0.0) происходит сборка и отправка с соответствующим label в регистри, а также деплой соответствующего Docker образа в кластер Kubernetes.
 
+
+### Установка и настройка CI/CD
+
+```bash
+git clone git@gitlab.com:denis.a.ten/tenda-devops-diplom-app-cicd.git
+cd tenda-devops-diplom-app-cicd
+git switch --create main
+touch README.md
+git add README.md
+git commit -m "add README"
+git push --set-upstream origin main
+```
+
+```bash
+git init --initial-branch=main
+git remote add origin git@gitlab.com:denis.a.ten/tenda-devops-diplom-app-cicd.git
+git add .
+git commit -m "Initial commit"
+git push --set-upstream origin main
+```
+
+
 ---
 ## Что необходимо для сдачи задания?
 
