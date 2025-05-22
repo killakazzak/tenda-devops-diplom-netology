@@ -287,7 +287,6 @@ cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra/
 mkdir -p ~/.kube/
 export API_ENDPOINT=$(terraform output -raw api_endpoint)
 ssh ubuntu@$API_ENDPOINT "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
-~/.kube/config
 ```
 
 Изменение `kubeconfig`
