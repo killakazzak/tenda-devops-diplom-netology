@@ -471,7 +471,7 @@ service:
 ### Установка системы мониторинга
 
 ```bash
-helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f prometheus-values.yaml
+helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
 ```
 
 Получение пароля
