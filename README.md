@@ -519,13 +519,22 @@ kubectl get svc -A
 ![alt text](img/image47.png)
 
 **Результаты**
-1. Git репозиторий с конфигурационными файлами для настройки Kubernetes.
-
-
+1. Создан Git репозиторий с конфигурационными файлами для настройки Kubernetes. Сылка: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/k8s
 
 2. Http доступ на 80 порту к web интерфейсу grafana.
-3. Дашборды в grafana отображающие состояние Kubernetes кластера.
+
+Grafana доступна по 80 порту
+
+![alt text](img/image48.png)
+
+3. Дашборды в grafana отображают состояние Kubernetes кластера.
+
+![alt text](img/image49.png)
+
 4. Http доступ на 80 порту к тестовому приложению.
+
+![alt text](img/image491.png)
+
 5. Atlantis или terraform cloud или ci/cd-terraform
 
 ---
