@@ -453,6 +453,14 @@ helm show values prometheus-community/kube-prometheus-stack > /home/tenda/tenda-
 
 - Редактирование файла [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
 
+```yaml
+service:
+    portName: http-web
+    type: NodePort #добавлен тип сервиса
+    nodePort: 30050 #добавлен номер порта
+    ipFamilies: []
+    ipFamilyPolicy: ""
+```
 
 - Установка системы мониторинга
 
