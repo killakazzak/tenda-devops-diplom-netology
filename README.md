@@ -661,8 +661,16 @@ kubectl --namespace=gitlab-runner create secret generic runner-secret --from-lit
 
 ```bash
 helm repo add gitlab https://charts.gitlab.io
-helm install gitlab-runner gitlab/gitlab-runner -n gitlab-runner -f https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/gitlab-runner-values.yaml
+helm install gitlab-runner gitlab/gitlab-runner -n gitlab-runner -f /home/tenda/tenda-devops-diplom-netology/k8s/gitlab-runner-values.yaml
 ```
+
+```bash
+kubectl get pods -n gitlab-runner
+```
+
+![alt text](img/image56.png)
+
+![alt text](img/image57.png)
 
 ---
 ## Что необходимо для сдачи задания?
