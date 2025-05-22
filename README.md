@@ -547,7 +547,7 @@ yc load-balancer network-load-balancer list
 **Результаты**
 1. В Git репозиторий добавлены конфигурационные файлы для настройки Kubernetes. 
 
-*Файлы конфигурации* 
+*Файлы конфигураций* 
 - [lb.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/lb.tf)
 - [deployment.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/deployment.yaml)
 - [service.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/service.yaml)
