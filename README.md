@@ -525,7 +525,8 @@ kubectl get svc -A
 - Добавление балансировщика в инфраструктуру
 
 *Файл конфигурации* 
-- [lb.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/lb.tf)
+- [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
+
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
@@ -544,7 +545,14 @@ yc load-balancer network-load-balancer list
 ![alt text](img/image492.png)
 
 **Результаты**
-1. Создан Git репозиторий с конфигурационными файлами для настройки Kubernetes. Сылка: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/k8s
+1. В Git репозиторий добавлены конфигурационные файлы для настройки Kubernetes. 
+
+*Файл конфигурации* 
+- [lb.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/lb.tf)
+- [deployment.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/deployment.yaml)
+- [service.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/service.yaml)
+
+Сылка: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/k8s
 
 2. Web-интерфейс Grafana доступен по http на 80 порту
 
