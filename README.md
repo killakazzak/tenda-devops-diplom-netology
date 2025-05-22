@@ -588,7 +588,7 @@ yc load-balancer network-load-balancer list
 
 ### Установка и настройка CI/CD
 
-- CI/CD на базе GitLab CI
+- Реализация `CI/CD` на базе `GitLab CI`
 
 - Создание нового репозитория. Ссылка на репозиторий [tenda-devops-diplom-app-cicd](https://gitlab.com/denis.a.ten/tenda-devops-diplom-app-cicd#)
 - Клонирование репозитория на локальный ПК
@@ -605,7 +605,7 @@ git push --set-upstream origin main
 
 ![alt text](img/image50.png)
 
-- Добавление удаленного репозитория с именем origin
+- Добавление удаленного репозитория с именем `origin`
 
 ```bash
 git init --initial-branch=main
@@ -634,6 +634,7 @@ git push
 
 ![alt text](img/image53.png)
 
+![alt text](img/image54.png)
 
 ---
 ## Что необходимо для сдачи задания?
