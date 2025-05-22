@@ -643,6 +643,20 @@ git push
 
 ![alt text](img/image55.png)
 
+
+- Создание namespace для GitLab Runner
+
+```bash
+kubectl create ns gitlab-runner
+```
+
+- Создание secret для регистрации GitLab Runner
+
+```bash
+export GITLAB_RUNNER_TOKEN="значение_токена"
+kubectl --namespace=gitlab-runner create secret generic runner-secret --from-literal=runner-registration-token="$GITLAB_RUNNER_TOKEN" --from-literal=runner-token=""
+```
+
 ---
 ## Что необходимо для сдачи задания?
 
