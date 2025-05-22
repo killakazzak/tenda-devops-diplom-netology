@@ -656,12 +656,7 @@ kubectl create ns gitlab-runner
 export GITLAB_RUNNER_TOKEN="значение_токена"
 kubectl --namespace=gitlab-runner create secret generic runner-secret --from-literal=runner-registration-token="$GITLAB_RUNNER_TOKEN" --from-literal=runner-token=""
 ```
-<<<<<<< HEAD
 
-
-=======
-glrt-PtJdJjQ7kJOPcMHmmb0MYG86MQpwOjE1cHM0Ngp0OjMKdTo4OWk2Nhg.01.1j08va3ok
->>>>>>> 41cf230b52ed68acc3be15e75a9553bc960bac0e
 ---
 ## Что необходимо для сдачи задания?
 
