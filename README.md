@@ -131,6 +131,8 @@ terraform apply --auto-approve
 source .env
 ```
 
+![alt text](img/image02.png)
+
 **Проверка**
 
 ```bash
@@ -193,6 +195,7 @@ yc vpc subnet list
 
 ![alt text](img/image13.png)
 
+![alt text](img/image111.png)
 
 **Итоговая проверка 1-го этапа**
 
@@ -289,7 +292,7 @@ ansible-playbook -i inventory/mycluster/inventory-default.ini cluster.yml -b -v
 cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra/
 mkdir -p ~/.kube/
 export API_ENDPOINT=$(terraform output -raw api_endpoint)
-ssh ubuntu@$API_ENDPOINT "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
+ssh -o StrictHostKeyChecking=no ubuntu@$API_ENDPOINT "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
 ```
 
 Изменение `kubeconfig`
@@ -493,6 +496,7 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 - Установка Ingress-Nginx контроллера (Версия Helm 3.18.0 для установки не подходит (баг))
 
 ```bash
+cd /home/tenda/tenda-devops-diplom-netology/k8s/
 helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx   --namespace ingress-nginx   --create-namespace   -f ingress-values.yaml
 ```
 

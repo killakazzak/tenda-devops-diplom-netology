@@ -9,8 +9,10 @@ resource "yandex_dns_zone" "denisten_ru" {
 
 # Получаем информацию о балансировщике по его имени
 data "yandex_lb_network_load_balancer" "lb-ingress" {
-  name = "lb-ingress" # Указываем имя балансировщика
+  name       = "lb-ingress" # Указываем имя балансировщика
+  depends_on = [yandex_lb_network_load_balancer.lb-ingress]
 }
+
 
 resource "yandex_dns_recordset" "denisten_ru_a" {
   zone_id = yandex_dns_zone.denisten_ru.id
