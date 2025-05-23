@@ -273,12 +273,15 @@ yc compute instance list
 
 ### 3. Установка балансировщика и добавление DNS зоны *denisten.ru*
 
-Планируется организовывать доступ к системе мониторинга и тестовому приложению через Ingress по URL: 
+Планируется организовывать доступ к `Cистеме мониторинга` и `Тестовому приложению` через `Ingress Nginx` по URL: 
 
 - Система мониторинга http://denisten.ru
 - Тестовое приложение http://denisten.ru/app
 
 - Добавление балансировщика в инфраструктуру
+
+*Файл конфигурации* 
+- [lb.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/lb.tf)
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
