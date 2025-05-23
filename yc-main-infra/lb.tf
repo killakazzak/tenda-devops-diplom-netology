@@ -11,13 +11,13 @@ resource "yandex_lb_target_group" "lb-group" {
   }
 }
 
-resource "yandex_lb_network_load_balancer" "lb-grafana" {
-  name = "lb-grafana"
+resource "yandex_lb_network_load_balancer" "lb-ingress" {
+  name = "lb-ingress"
 
   listener {
-    name        = "listener-grafana"
+    name        = "lb-ingress"
     port        = 80
-    target_port = 30050
+    target_port = 30080
     external_address_spec {
       ip_version = "ipv4"
     }
@@ -29,34 +29,9 @@ resource "yandex_lb_network_load_balancer" "lb-grafana" {
     healthcheck {
       name = "http-healthcheck"
       tcp_options {
-        port = 30050
+        port = 30080
       }
     }
   }
   depends_on = [yandex_lb_target_group.lb-group]
-}
-
-resource "yandex_lb_network_load_balancer" "lb-web-app" {
-  name = "lb-web-app"
-
-  listener {
-    name        = "listener-web-app"
-    port        = 80
-    target_port = 30051
-    external_address_spec {
-      ip_version = "ipv4"
-    }
-  }
-
-  attached_target_group {
-    target_group_id = yandex_lb_target_group.lb-group.id
-
-    healthcheck {
-      name = "http-healthcheck"
-      tcp_options {
-        port = 30051
-      }
-    }
-  }
-  depends_on = [yandex_lb_network_load_balancer.lb-grafana]
 }
