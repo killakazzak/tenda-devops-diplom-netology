@@ -331,6 +331,12 @@ yc dns zone list
 ```
 ![alt text](img/image499.png)
 
+```bash
+yc dns zone list-records --name denisten-ru
+```
+
+![alt text](img/image4981.png)
+
 
 ### 3. Установка Kubernetes
 
