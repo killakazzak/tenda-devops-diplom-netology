@@ -3,7 +3,7 @@ resource "yandex_dns_zone" "denisten_ru" {
   name        = "denisten-ru"
   description = "Main DNS zone"
   zone        = "denisten.ru."
-  folder_id   = "b1g3hhpc4sj7fmtmdccu"
+  folder_id   = var.folder_id
   public      = true
 }
 
