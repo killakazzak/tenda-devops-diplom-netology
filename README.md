@@ -96,6 +96,9 @@ terraform apply --auto-approve
 ```
 ![alt text](img/image-7.png)
 
+![alt text](img/image01.png)
+
+
 **Проверка**
 
 ```bash
