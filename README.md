@@ -515,6 +515,19 @@ kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.dat
 ```
 ![alt text](img/image43.png)
 
+**Проверка установки `Системы мониторинга`**
+
+```bash
+kubectl get pods -n monitoring
+```
+
+![alt text](img/image444.png)
+
+```bash
+kubectl get svc -n monitoring
+```
+
+![alt text](img/image445.png)
 
 ### Развёртывание тестового приложения
 
