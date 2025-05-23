@@ -195,7 +195,6 @@ yc vpc subnet list
 
 ![alt text](img/image13.png)
 
-![alt text](img/image111.png)
 
 **Итоговая проверка 1-го этапа**
 
@@ -272,7 +271,7 @@ yc compute instance list
 
 ![alt text](img/image18.png)
 
-![alt text](img/image19.png)
+![alt text](img/image111.png)
 
 ### 3. Установка Kubernetes
 
