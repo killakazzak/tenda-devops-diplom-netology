@@ -584,6 +584,19 @@ yc load-balancer network-load-balancer list
 ![alt text](img/image491.png)
 
 
+
+- Через Web-интерфейс выпустил ssl-сертификат для домена denisten.ru
+
+```bash
+yc certificate-manager certificate list
+```
+
+![alt text](img/image498.png)
+
+![alt text](img/image496.png)
+
+![alt text](img/image497.png)
+
 ---
 ### Установка и настройка CI/CD
 
