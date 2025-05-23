@@ -696,7 +696,7 @@ yc certificate-manager certificate list
 
 ### Установка и настройка CI/CD
 
-- Реализация `CI/CD` на базе `GitLab CI`
+- `CI/CD` реализован на базе `GitLab CI`
 
 - Создание нового репозитория. Ссылка на репозиторий [tenda-devops-diplom-app-cicd](https://gitlab.com/denis.a.ten/tenda-devops-diplom-app-cicd#)
 - Клонирование репозитория на локальный ПК
