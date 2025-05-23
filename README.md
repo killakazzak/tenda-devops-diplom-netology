@@ -807,7 +807,7 @@ Pipeline разделен на 2е стадии:
 
 - Этап сборки `build`
 
-![alt text](image588.png)
+![alt text](img/image588.png)
 
 
 1я версия тестового приложения
