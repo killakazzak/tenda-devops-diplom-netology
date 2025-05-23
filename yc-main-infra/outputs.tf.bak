@@ -24,7 +24,12 @@ output "worker_ip" {
   ]
 }
 
-output "Ingress_Load_Balancer_Address" {
-  value       = yandex_lb_network_load_balancer.lb-ingress.listener.*.external_address_spec[0].*.address
-  description = "Адрес сетевого балансировщика для Ingress"
+output "Grafana_Network_Load_Balancer_Address" {
+  value       = yandex_lb_network_load_balancer.lb-grafana.listener.*.external_address_spec[0].*.address
+  description = "Адрес сетевого балансировщика для Grafana"
+}
+
+output "Web_App_Network_Load_Balancer_Address" {
+  value       = yandex_lb_network_load_balancer.lb-web-app.listener.*.external_address_spec[0].*.address
+  description = "Адрес сетевого балансировщика Web App"
 }
