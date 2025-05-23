@@ -654,14 +654,13 @@ kubectl get svc -A
 
 ![alt text](img/image48.png)
 
-3. Дашборды в grafana отображают состояние Kubernetes кластера.
+3. Дашборды в `grafana` отображают состояние `Kubernetes` кластера.
 
 ![alt text](img/image49.png)
 
-4. Тестовое приложение доступно по http на 80 порту.
+4. Тестовое приложение доступно по внешней публикации: http://denisten.ru/app
 
 ![alt text](img/image491.png)
-
 
 
 - Через Web-интерфейс выпустил ssl-сертификат для домена denisten.ru
