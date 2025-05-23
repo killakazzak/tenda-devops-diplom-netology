@@ -568,6 +568,7 @@ yc load-balancer network-load-balancer list
 
 ![alt text](img/image492.png)
 
+
 **Результаты**
 1. В Git репозиторий добавлены конфигурационные файлы для настройки Kubernetes. 
 
