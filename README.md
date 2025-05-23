@@ -786,6 +786,11 @@ kubectl get pods -n gitlab-runner
 
 ![alt text](img/image57.png)
 
+- Добавление переменных в 
+
+![alt text](img/image571.png)
+
+
 ---
 ## Что необходимо для сдачи задания?
 
