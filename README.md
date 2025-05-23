@@ -508,7 +508,101 @@ docker push killakazzak/tenda-devops-app:0.1
 
 ---
 
-### Этап 4.1 Добавление helm-репозитория для установки Ingress конроллера
+#### Добавление helm-репозитория для установки `Prometheus` и `Grafana`
+
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+
+![alt text](img/image41.png)
+
+#### Сохранение и редактирование значений по умолчанию в файл [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
+
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology
+mkdir -p k8s
+helm show values prometheus-community/kube-prometheus-stack > /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
+```
+
+- Редактирование файла [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
+
+```bash
+sed -i '/portName: http-web/a\    type: NodePort\    \n    nodePort: 30050' /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
+```
+
+```yaml
+service:
+    portName: http-web
+    type: NodePort   #добавлен тип сервиса
+    nodePort: 30050  #добавлен номер порта
+    ipFamilies: []
+    ipFamilyPolicy: ""
+```
+
+### Этап 4.1 Установка системы мониторинга
+
+*Файл параметров установки* 
+- [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
+
+```bash
+helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
+```
+
+Получение пароля
+
+```bash
+kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+```
+![alt text](img/image43.png)
+
+**Проверка установки `Системы мониторинга`**
+
+```bash
+kubectl get pods -n monitoring
+```
+
+![alt text](img/image444.png)
+
+```bash
+kubectl get svc -n monitoring
+```
+
+![alt text](img/image445.png)
+
+### Этап 4.2 Установка тестового приложения
+
+#### Создание namespace `tenda`
+
+```bash
+kubectl create namespace tenda
+```
+![alt text](img/image44.png)
+
+- Применение манифестов [deployment.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/deployment.yaml) и [service.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/service.yaml)
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/k8s
+kubectl apply -f deployment.yaml -f service.yaml -n tenda
+```
+
+![alt text](img/image45.png)
+
+**Проверка**
+
+```bash
+kubectl get pods -n tenda
+```
+
+![alt text](img/image46.png)
+
+```bash
+kubectl get svc -A
+```
+
+![alt text](img/image47.png)
+
+### Этап 4.3 Добавление helm-репозитория для установки Ingress конроллера
 
 ```bash
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
@@ -547,100 +641,6 @@ kubectl get svc -n ingress-nginx
 ```
 
 ![alt text](img/image495.png)
-
-#### Добавление helm-репозитория для установки `Prometheus` и `Grafana`
-
-```bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-```
-
-![alt text](img/image41.png)
-
-#### Сохранение и редактирование значений по умолчанию в файл [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
-
-
-```bash
-cd /home/tenda/tenda-devops-diplom-netology
-mkdir -p k8s
-helm show values prometheus-community/kube-prometheus-stack > /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
-```
-
-- Редактирование файла [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
-
-```bash
-sed -i '/portName: http-web/a\    type: NodePort\    \n    nodePort: 30050' /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
-```
-
-```yaml
-service:
-    portName: http-web
-    type: NodePort   #добавлен тип сервиса
-    nodePort: 30050  #добавлен номер порта
-    ipFamilies: []
-    ipFamilyPolicy: ""
-```
-
-### Этап 4.2 Установка системы мониторинга
-
-*Файл параметров установки* 
-- [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
-
-```bash
-helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
-```
-
-Получение пароля
-
-```bash
-kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
-```
-![alt text](img/image43.png)
-
-**Проверка установки `Системы мониторинга`**
-
-```bash
-kubectl get pods -n monitoring
-```
-
-![alt text](img/image444.png)
-
-```bash
-kubectl get svc -n monitoring
-```
-
-![alt text](img/image445.png)
-
-### Этап 4.3 Установка тестового приложения
-
-#### Создание namespace `tenda`
-
-```bash
-kubectl create namespace tenda
-```
-![alt text](img/image44.png)
-
-- Применение манифестов [deployment.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/deployment.yaml) и [service.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/service.yaml)
-
-```bash
-cd /home/tenda/tenda-devops-diplom-netology/k8s
-kubectl apply -f deployment.yaml -f service.yaml -n tenda
-```
-
-![alt text](img/image45.png)
-
-**Проверка**
-
-```bash
-kubectl get pods -n tenda
-```
-
-![alt text](img/image46.png)
-
-```bash
-kubectl get svc -A
-```
-
-![alt text](img/image47.png)
 
 ## Результаты выполнения 4-го этапа
 
