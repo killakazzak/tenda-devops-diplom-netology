@@ -223,7 +223,7 @@ yc vpc subnet list
 ![alt text](img/image16.png)
 
 ---
-### Создание Kubernetes кластера
+## Этап 2. Создание Kubernetes кластера
 
 На этом этапе необходимо создать [Kubernetes](https://kubernetes.io/ru/docs/concepts/overview/what-is-kubernetes/) кластер на базе предварительно созданной инфраструктуры.   Требуется обеспечить доступ к ресурсам из Интернета.
 
@@ -243,16 +243,16 @@ yc vpc subnet list
 2. В файле `~/.kube/config` находятся данные для доступа к кластеру.
 3. Команда `kubectl get pods --all-namespaces` отрабатывает без ошибок.
 
-### Создание Kubernetes кластера
+### Этап 2.1 Создание Kubernetes кластера
 
-### 1. Создание ВМ в разных зонах доступности
+#### Создание ВМ в разных зонах доступности
 [В целях экономии ресурсов создаем 3 ВМ: 1 - master-ноду и 2 - worker-ноды]
 
 *Файлы конфигурации* 
 - [vm.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/vm.tf)
 - [outputs.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/outputs.tf)
 
-### 2. Подготовка конфигурации Ansible
+#### Подготовка конфигурации Ansible
 
 *Файл конфигурации* 
 - [ansible.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/ansible.tf)
@@ -275,7 +275,7 @@ yc compute instance list
 
 ![alt text](img/image18.png)
 
-### 3. Установка балансировщика и добавление DNS зоны *denisten.ru*
+### Этап 2.2 Установка балансировщика и добавление DNS зоны *denisten.ru*
 
 Планируется организовывать доступ к `Cистеме мониторинга` и `Тестовому приложению` через `Ingress Nginx` 
 
@@ -342,7 +342,7 @@ yc dns zone list-records --name denisten-ru
 ![alt text](img/image4981.png)
 
 
-### 3. Установка Kubernetes
+### Этап 2.3 Установка Kubernetes
 
 Установка кластера с помощью `kuberspay`
 
@@ -399,7 +399,7 @@ kubectl get pods -A
 ![alt text](img/image20.png)
 
 ---
-### Создание тестового приложения
+### Этап 2.4 Создание тестового приложения
 
 Для перехода к следующему этапу необходимо подготовить тестовое приложение, эмулирующее основное приложение разрабатываемое вашей компанией.
 
@@ -416,13 +416,11 @@ kubectl get pods -A
 1. Git репозиторий с тестовым приложением и Dockerfile.
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
 
-### Создание тестового приложения
-
 - Создание отдельного git-репозиторий. Ссылка на репозиторий: https://github.com/killakazzak/tenda-devops-diplom-app.git
 
 ![alt text](img/image31.png)
 
-- Клонирование репозитория на локальный ПК
+#### Клонирование репозитория на локальный ПК
 
 ```bash
 git clone git@github.com:killakazzak/tenda-devops-diplom-app.git
@@ -457,7 +455,7 @@ docker images
 
 - Авторизация на github.com
 
-Создание Personal access token
+#### Создание Personal access token
 
 ![alt text](img/image34.png)
 
@@ -469,7 +467,7 @@ docker login -u killakazzak
 
 ![alt text](img/image36.png)
 
-- Публикация образа
+#### Публикация образа на `dockerhub`
 
 ```bash
 docker push killakazzak/tenda-devops-app:0.1
@@ -480,7 +478,7 @@ docker push killakazzak/tenda-devops-app:0.1
 
 ![alt text](img/image39.png)
 
-**Результаты**
+## Результаты выполнения 2-го этапа
 
 - тестовое приложение подготовлено
 - образ собран и опубликован
