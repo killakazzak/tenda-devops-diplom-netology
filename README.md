@@ -786,10 +786,24 @@ kubectl get pods -n gitlab-runner
 
 ![alt text](img/image57.png)
 
-- Добавление переменных в 
+- Добавление переменных в настройки проекта
 
 ![alt text](img/image571.png)
 
+- Создание `pipeline`
+
+*Файл конфигурации `GitLab CI`* 
+
+- [.gitlab-ci.yml](https://gitlab.com/denis.a.ten/tenda-devops-diplom-app-cicd/-/blob/80e405d41ce213674ccebe287d8912da82f352b4/.gitlab-ci.yml)
+
+Сборка и Деплой приложения будет выполняться автоматически при измении кода и добавления нового тега.
+
+Pipeline разделен на 2е стадии:
+
+- build
+- deploy
+
+**Проверка работоспособности `CI/CD конвеера`**
 
 ---
 ## Что необходимо для сдачи задания?
