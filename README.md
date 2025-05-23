@@ -271,6 +271,32 @@ yc compute instance list
 
 ![alt text](img/image18.png)
 
+### 3. Установка балансировщика и добавление DNS зоны *denisten.ru*
+
+Планируется организовывать доступ к системе мониторинга и тестовому приложению через Ingress по URL: 
+
+- Система мониторинга http://denisten.ru
+- Тестовое приложение http://denisten.ru/app
+
+- Добавление балансировщика в инфраструктуру
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
+terraform init
+terraform validate
+terraform apply --auto-approve
+```
+![alt text](img/image493.png)
+
+**Проверка**
+
+```bash
+yc load-balancer network-load-balancer list
+```
+
+![alt text](img/image492.png)
+
+
 ![alt text](img/image111.png)
 
 ### 3. Установка Kubernetes
@@ -574,25 +600,6 @@ kubectl get svc -A
 ```
 
 ![alt text](img/image47.png)
-
-- Добавление балансировщика в инфраструктуру
-
-```bash
-cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
-terraform init
-terraform validate
-terraform apply --auto-approve
-```
-![alt text](img/image493.png)
-
-**Проверка**
-
-```bash
-yc load-balancer network-load-balancer list
-```
-
-![alt text](img/image492.png)
-
 
 **Результаты**
 1. В Git репозиторий добавлены конфигурационные файлы для настройки Kubernetes. 
