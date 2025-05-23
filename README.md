@@ -610,9 +610,9 @@ kubectl get svc -n monitoring
 
 ![alt text](img/image445.png)
 
-### Развёртывание тестового приложения
+### Этап 3.3 Установка тестового приложения
 
-- Создание namespace `tenda`
+#### Создание namespace `tenda`
 
 ```bash
 kubectl create namespace tenda
@@ -642,7 +642,8 @@ kubectl get svc -A
 
 ![alt text](img/image47.png)
 
-**Результаты**
+## Результаты выполнения 3-го этапа
+
 1. В Git репозиторий добавлены конфигурационные файлы для настройки Kubernetes. 
 
 *Файлы конфигураций* 
@@ -678,7 +679,7 @@ yc certificate-manager certificate list
 ![alt text](img/image497.png)
 
 ---
-### Установка и настройка CI/CD
+## Этап 4. Установка и настройка CI/CD
 
 Осталось настроить ci/cd систему для автоматической сборки docker image и деплоя приложения при изменении кода.
 
@@ -695,8 +696,7 @@ yc certificate-manager certificate list
 2. При любом коммите в репозиторие с тестовым приложением происходит сборка и отправка в регистр Docker образа.
 3. При создании тега (например, v1.0.0) происходит сборка и отправка с соответствующим label в регистри, а также деплой соответствующего Docker образа в кластер Kubernetes.
 
-
-### Установка и настройка CI/CD
+### Этап 4.1 Первоначальная настройка
 
 `CI/CD` реализован на базе `GitLab CI`
 
@@ -848,20 +848,20 @@ Pipeline разделен на 2е стадии:
 ## Итоги выполненной работы:
 
 1. Репозиторий с конфигурационными файлами Terraform и готовность продемонстрировать создание всех ресурсов с нуля.
-- Создание сервисного аккаунта:  https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-sa
-- Создание бакета:               https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-bucket
-- Создание инфраструктуры:       https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-main-infra
+- Создание сервисного аккаунта:                    https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-sa
+- Создание бакета:                                 https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-bucket
+- Создание инфраструктуры:                         https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-main-infra
 
 2. Репозиторий с конфигурацией ansible, был выбран способ создания `Kubernetes` кластера при помощи `ansible`
-- Репозиторий с шаблонами: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-main-infra
+- Репозиторий с шаблонами:                         https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-main-infra
 
 3. Репозиторий с Dockerfile тестового приложения и ссылка на собранный docker image. Сборка и деплой выполнялась на базе `GitLab CI`.
-- Репозиторий: https://gitlab.com/denis.a.ten/tenda-devops-diplom-app-cicd
-- Ссылка на образ: https://hub.docker.com/r/killakazzak/tenda-devops-app
+- Репозиторий:                                     https://gitlab.com/denis.a.ten/tenda-devops-diplom-app-cicd
+- Ссылка на образ:                                 https://hub.docker.com/r/killakazzak/tenda-devops-app
 
 4. Репозиторий с конфигурацией Kubernetes кластера.
-- Репозиторий: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/fcf6612ed7e9d00824d0ce48f9a007659deb1ae1/k8s
+- Репозиторий:                                     https://github.com/killakazzak/tenda-devops-diplom-netology/tree/fcf6612ed7e9d00824d0ce48f9a007659deb1ae1/k8s
 
 5. Ссылка на тестовое приложение и веб интерфейс Grafana с данными доступа.
-- Тестовое приложение:     http://denisten.ru/app
-- Web-интерфейс Grafana:   http://denisten.ru
+- Тестовое приложение:                             http://denisten.ru/app
+- Web-интерфейс Grafana:                           http://denisten.ru
