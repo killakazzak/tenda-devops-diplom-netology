@@ -299,7 +299,7 @@ terraform apply --auto-approve
 ```
 ![alt text](img/image493.png)
 
-**Проверка**
+**Проверка установки балансировщика**
 
 ```bash
 yc load-balancer network-load-balancer list
@@ -309,6 +309,28 @@ yc load-balancer network-load-balancer list
 
 
 ![alt text](img/image111.png)
+
+- Добавление DNS зоны и A-записи
+
+Создание и обновление А-записи для домена *`denisten.ru`* происходит в автоматическом режиме.
+
+*Файл конфигурации* 
+- [dns.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/dns.tf)
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/yc-main-infra
+terraform init
+terraform validate
+terraform apply --auto-approve
+```
+
+**Проверка регистрации домена и создание A-записи**
+
+```bash
+yc dns zone list
+```
+![alt text](img/image499.png)
+
 
 ### 3. Установка Kubernetes
 
