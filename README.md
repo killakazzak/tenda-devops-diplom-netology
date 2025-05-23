@@ -762,6 +762,13 @@ export GITLAB_RUNNER_TOKEN="значение_токена"
 kubectl --namespace=gitlab-runner create secret generic runner-secret --from-literal=runner-registration-token="$GITLAB_RUNNER_TOKEN" --from-literal=runner-token=""
 ```
 
+**Проверка создания `secret`**
+
+```bash
+kubectl get secrets -n gitlab-runner
+```
+![alt text](image561.png)
+
 - Установка с помощью Helm `GitLab Runner` 
 
 ```bash
