@@ -449,6 +449,7 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 ```
 
 - Установка Ingress-Nginx контроллера (Версия Helm 3.18.0 для установки не подходит (баг в 3.18.1 обещали исправить))
+- Файл параметров установки [ingress-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/ingress-values.yaml)
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-netology/k8s/
