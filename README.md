@@ -442,6 +442,33 @@ docker push killakazzak/tenda-devops-app:0.1
 
 ### Подготовка cистемы мониторинга и деплой приложения
 
+- Добавление helm-репозитория для установки Ingress конроллера
+
+```bash
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+```
+
+- Установка Ingress-Nginx контроллера (Версия Helm 3.18.0 для установки не подходит (баг в 3.18.1 обещали исправить))
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/k8s/
+helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx   --namespace ingress-nginx   --create-namespace   -f ingress-values.yaml
+```
+
+**Проверка установки `Ingress Controller`**
+
+```bash
+kubectl get pods -n ingress-nginx
+```
+
+![alt text](img/image494.png)
+
+```bash
+kubectl get svc -n ingress-nginx
+```
+
+![alt text](img/image495.png)
+
 - Добавление helm-репозитория для установки `Prometheus` и `Grafana`
 
 ```bash
@@ -476,6 +503,7 @@ service:
 
 ### Установка системы мониторинга
 
+
 ```bash
 helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f /home/tenda/tenda-devops-diplom-netology/k8s/prometheus-values.yaml
 ```
@@ -487,32 +515,6 @@ kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.dat
 ```
 ![alt text](img/image43.png)
 
-- Добавление helm-репозитория для установки Ingress конроллера
-
-```bash
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-```
-
-- Установка Ingress-Nginx контроллера (Версия Helm 3.18.0 для установки не подходит (баг))
-
-```bash
-cd /home/tenda/tenda-devops-diplom-netology/k8s/
-helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx   --namespace ingress-nginx   --create-namespace   -f ingress-values.yaml
-```
-
-**Проверка установки Helm**
-
-```bash
-kubectl get pods -n ingress-nginx
-```
-
-![alt text](img/image494.png)
-
-```bash
-kubectl get svc -n ingress-nginx
-```
-
-![alt text](img/image495.png)
 
 ### Развёртывание тестового приложения
 
