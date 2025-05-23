@@ -663,7 +663,7 @@ kubectl get svc -A
 ![alt text](img/image491.png)
 
 
-- Через Web-интерфейс выпустил ssl-сертификат для домена denisten.ru
+- Через Web-интерфейс выпустил ssl-сертификат для домена *denisten.ru* - данный сертификат можно использовать для организации доступа по https к развернутым приложениям.
 
 ```bash
 yc certificate-manager certificate list
