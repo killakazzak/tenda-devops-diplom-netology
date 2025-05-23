@@ -485,7 +485,7 @@ docker push killakazzak/tenda-devops-app:0.1
 
 
 ---
-### Подготовка cистемы мониторинга и деплой приложения
+## Этап 3.  Подготовка cистемы мониторинга и деплой приложения
 
 Уже должны быть готовы конфигурации для автоматического создания облачной инфраструктуры и поднятия Kubernetes кластера.  
 Теперь необходимо подготовить конфигурационные файлы для настройки нашего Kubernetes кластера.
@@ -506,15 +506,15 @@ docker push killakazzak/tenda-devops-app:0.1
 4. Http доступ на 80 порту к тестовому приложению.
 5. Atlantis или terraform cloud или ci/cd-terraform
 
-### Подготовка cистемы мониторинга и деплой приложения
+---
 
-- Добавление helm-репозитория для установки Ingress конроллера
+### Этап 3.1 Добавление helm-репозитория для установки Ingress конроллера
 
 ```bash
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 ```
 
-- Установка `Ingress-Nginx контроллера` (Версия Helm 3.18.0 для установки не подходит (баг в 3.18.1 обещали исправить))
+#### Установка `Ingress-Nginx контроллера` (Версия Helm 3.18.0 для установки не подходит (баг в 3.18.1 обещали исправить))
 
 *Файл параметров установки Ingress-Nginx контроллера*  
 - [ingress-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/ingress-values.yaml)
@@ -524,7 +524,7 @@ cd /home/tenda/tenda-devops-diplom-netology/k8s/
 helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx   --namespace ingress-nginx   --create-namespace   -f ingress-values.yaml
 ```
 
-- Настройка `Ingress-Nginx контроллера`
+#### Настройка `Ingress-Nginx контроллера`
 
 *Файл конфигурации `Ingress-Nginx контроллера`* 
 - [ingress-config.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/ingress-config.yaml)
@@ -548,7 +548,7 @@ kubectl get svc -n ingress-nginx
 
 ![alt text](img/image495.png)
 
-- Добавление helm-репозитория для установки `Prometheus` и `Grafana`
+#### Добавление helm-репозитория для установки `Prometheus` и `Grafana`
 
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -556,7 +556,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 ![alt text](img/image41.png)
 
-- Сохранение и редактирование значений по умолчанию в файл [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
+#### Сохранение и редактирование значений по умолчанию в файл [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
 
 
 ```bash
@@ -580,7 +580,7 @@ service:
     ipFamilyPolicy: ""
 ```
 
-### Установка системы мониторинга
+### Этап 3.2 Установка системы мониторинга
 
 *Файл параметров установки* 
 - [prometheus-values.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/prometheus-values.yaml)
