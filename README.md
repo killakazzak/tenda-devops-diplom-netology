@@ -794,7 +794,7 @@ kubectl get pods -n gitlab-runner
 
 ![alt text](img/image571.png)
 
-- Создание `pipeline`
+### Этап 5.3 Создание `pipeline`
 
 *Файл конфигурации `GitLab CI`* 
 
@@ -814,7 +814,7 @@ Pipeline разделен на 2е стадии:
 
 ![alt text](img/image5998.png)
 
-Оба этапа прошли без ошибок!
+**Оба этапа прошли без ошибок!**
 
 **1-я версия тестового приложения**
 
