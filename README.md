@@ -767,7 +767,7 @@ kubectl --namespace=gitlab-runner create secret generic runner-secret --from-lit
 ```bash
 kubectl get secrets -n gitlab-runner
 ```
-![alt text](image561.png)
+![alt text](img/image561.png)
 
 - Установка с помощью Helm `GitLab Runner` 
 
