@@ -114,7 +114,7 @@ yc iam service-accounts list
 
 ### 2. Подготовка backend для Terraform:
 
-### Создание bucket в S3
+#### 2.1 Создание bucket в S3
 
 *Файл конфигурации* 
 - [bucket.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-bucket/bucket.tf)
