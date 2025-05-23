@@ -776,6 +776,8 @@ helm repo add gitlab https://charts.gitlab.io
 helm install gitlab-runner gitlab/gitlab-runner -n gitlab-runner -f /home/tenda/tenda-devops-diplom-netology/k8s/gitlab-runner-values.yaml
 ```
 
+![alt text](img/image562.png)
+
 ```bash
 kubectl get pods -n gitlab-runner
 ```
