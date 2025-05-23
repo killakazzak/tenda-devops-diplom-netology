@@ -457,8 +457,15 @@ cd /home/tenda/tenda-devops-diplom-netology/k8s/
 helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx   --namespace ingress-nginx   --create-namespace   -f ingress-values.yaml
 ```
 
+- Настройка Ingress контроллера
+
 *Файл конфигурации Ingress-контроллера* 
 - [ingress-config.yaml](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/k8s/ingress-config.yaml)
+
+```bash
+cd /home/tenda/tenda-devops-diplom-netology/k8s/
+kubectl apply -f ingress-config.yaml
+```
 
 **Проверка установки `Ingress Controller`**
 
