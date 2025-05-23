@@ -650,7 +650,7 @@ kubectl get svc -A
 
 Ссылка: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/k8s
 
-2. Web-интерфейс Grafana доступен по http на 80 порту
+2. Web-интерфейс Grafana доступен по внешней публикации: http://denisten.ru/
 
 ![alt text](img/image48.png)
 
