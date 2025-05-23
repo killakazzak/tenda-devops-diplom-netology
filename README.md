@@ -843,3 +843,23 @@ Pipeline разделен на 2е стадии:
 6. Ссылка на тестовое приложение и веб интерфейс Grafana с данными доступа.
 7. Все репозитории рекомендуется хранить на одном ресурсе (github, gitlab)
 
+## Итоги выполненной работы:
+
+1. Репозиторий с конфигурационными файлами Terraform и готовность продемонстрировать создание всех ресурсов с нуля.
+- Создание сервисного аккаунта:  https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-sa
+- Создание бакета:               https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-bucket
+- Создание инфраструктуры:       https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-main-infra
+
+2. Репозиторий с конфигурацией ansible, был выбран способ создания `Kubernetes` кластера при помощи `ansible`
+- Репозиторий с шаблонами: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/main/yc-main-infra
+
+3. Репозиторий с Dockerfile тестового приложения и ссылка на собранный docker image. Сборка и деплой выполнялась на базе `GitLab CI`.
+- Репозиторий: https://gitlab.com/denis.a.ten/tenda-devops-diplom-app-cicd
+- Ссылка на образ: https://hub.docker.com/r/killakazzak/tenda-devops-app
+
+4. Репозиторий с конфигурацией Kubernetes кластера.
+- Репозиторий: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/fcf6612ed7e9d00824d0ce48f9a007659deb1ae1/k8s
+
+5. Ссылка на тестовое приложение и веб интерфейс Grafana с данными доступа.
+- Тестовое приложение:     http://denisten.ru/app
+- Web-интерфейс Grafana:   http://denisten.ru
