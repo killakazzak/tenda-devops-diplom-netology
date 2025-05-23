@@ -30,7 +30,7 @@
 ## Этапы выполнения:
 
 
-### Создание облачной инфраструктуры
+## Этап 1. Создание облачной инфраструктуры
 
 Для начала необходимо подготовить облачную инфраструктуру в ЯО при помощи [Terraform](https://www.terraform.io/).
 
@@ -56,9 +56,9 @@
 2. Полученная конфигурация инфраструктуры является предварительной, поэтому в ходе дальнейшего выполнения задания возможны изменения.
 
 
-### Настройка Yandex Cloud
+### Этап 1.1 Настройка Yandex Cloud
 
-### Установка ПО для работы в CLI Yandex Cloud
+#### Установка ПО для работы в CLI Yandex Cloud
 
 ```bash
 curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
@@ -66,13 +66,13 @@ curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
 
 [**Иструкция**](https://yandex.cloud/ru/docs/cli/quickstart)
 
-### Настройка профиля в Yandex Cloud
+####  Настройка профиля в Yandex Cloud
 
 ```bash
 yc init
 ```
 
-### 1. Создание сервисного аккаунта администратора и авторизационного ключа
+####  Создание сервисного аккаунта администратора и авторизационного ключа
 
 **Предварительная проверка**
 
@@ -103,7 +103,7 @@ terraform apply --auto-approve
 ![alt text](img/image01.png)
 
 
-**Проверка**
+**Проверка создания аккаунта**
 
 ```bash
 yc iam service-accounts list
@@ -112,9 +112,9 @@ yc iam service-accounts list
 ![alt text](img/image-4.png)
 
 
-### 2. Подготовка backend для Terraform:
+### Этап 1.2 Подготовка backend для Terraform:
 
-#### 2.1 Создание bucket в S3
+#### Создание bucket в S3
 
 *Файл конфигурации* 
 - [bucket.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-bucket/bucket.tf)
@@ -153,7 +153,7 @@ source .env
 ```
 
 
-### 3. Создание конфигурации Terrafrom, для хранения terraform.state файла в ранее созданном бакете
+### Этап 1.3 Создание конфигурации Terrafrom, для хранения terraform.state файла в ранее созданном бакете
 
 *Файл конфигурации* 
 - [backend.tf](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/yc-main-infra/backend.tf)
@@ -169,7 +169,7 @@ terraform apply --auto-approve
 
 ![alt text](img/image14.png)
 
-### 4. Создание VPC с подсетями в разных зонах доступности
+### Этап 1.4 Создание VPC с подсетями в разных зонах доступности
 
 **Предварительная проверка**
 
@@ -200,7 +200,7 @@ yc vpc subnet list
 ![alt text](img/image13.png)
 
 
-**Итоговая проверка 1-го этапа**
+## Итоговая проверка 1-го этапа
 
 ```bash
 yc iam service-accounts list
