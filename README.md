@@ -863,5 +863,5 @@ Pipeline разделен на 2е стадии:
 - Репозиторий: https://github.com/killakazzak/tenda-devops-diplom-netology/tree/fcf6612ed7e9d00824d0ce48f9a007659deb1ae1/k8s
 
 5. Ссылка на тестовое приложение и веб интерфейс Grafana с данными доступа.
-- Тестовое приложение:     http://denisten.ru/app
-- Web-интерфейс Grafana:   http://denisten.ru
+- Тестовое приложение:        http://denisten.ru/app
+- Web-интерфейс Grafana:      http://denisten.ru
