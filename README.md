@@ -825,7 +825,7 @@ Pipeline разделен на 2е стадии:
 
 2я версия тестового приложения
 
-![alt text](img/5999image.png)
+![alt text](img/image5999.png)
 
 
 ---
