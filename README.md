@@ -867,3 +867,5 @@ Pipeline разделен на 2е стадии:
 5. Ссылка на тестовое приложение и веб интерфейс Grafana с данными доступа.
 - Тестовое приложение:                             http://denisten.ru/app
 - Web-интерфейс Grafana:                           http://denisten.ru
+- Пользователь: admin
+- Пароль: prom-operator
