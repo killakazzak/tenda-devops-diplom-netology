@@ -25,13 +25,15 @@ kind: Ingress
 metadata:
   name: app-ingress
   namespace: tenda
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
     - host: denisten.ru
       http:
         paths:
-        - path: /app
+        - path: /app/
           pathType: Prefix
           backend:
             service:
