@@ -475,7 +475,7 @@ docker login -u killakazzak
 docker push killakazzak/tenda-devops-app:0.0
 ```
 
-![alt text](img/image38.png)
+![alt text](img/image381.png)
 
 ![alt text](img/image3965.png)
 
