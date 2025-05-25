@@ -824,9 +824,9 @@ Pipeline разделен на 2е стадии:
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-app-cicd
-git tag 0.1
 git add .
 git commit -m 'version 0.1'
+git tag 0.1
 git push origin main --tags
 ```
 
