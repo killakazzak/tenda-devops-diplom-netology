@@ -789,6 +789,8 @@ helm install gitlab-runner gitlab/gitlab-runner -n gitlab-runner -f /home/tenda/
 
 ![alt text](img/image562.png)
 
+**Проверка установки GitLab Runner**
+
 ```bash
 kubectl get pods -n gitlab-runner
 ```
