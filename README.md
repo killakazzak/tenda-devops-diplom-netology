@@ -852,10 +852,10 @@ git push origin main --tags
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-app-cicd
-git tag 0.2
 git add .
 git commit -m 'version 0.2'
-git push origin 0.2
+git tag 0.2
+git push origin main --tags
 ```
 
 Автоматически запускается сборка и деплой новой версии приложения
@@ -879,7 +879,7 @@ git push origin 0.2
 
 **2-я версия тестового приложения**
 
-![alt text](img/image5999.png)
+![alt text](img/image5944.png)
 
 
 ---
