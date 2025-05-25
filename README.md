@@ -834,7 +834,8 @@ git push origin 0.1
 
 **Проверка публикации образа**
 
-![alt text](img/image5945.png)
+![alt text](img/image5934.png)
+
 
 **Проверка работоспособности `pipeline` **
 
