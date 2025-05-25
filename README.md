@@ -830,6 +830,8 @@ git commit -m 'version 0.1'
 git push origin 0.1
 ```
 
+![alt text](img/image5931.png)
+
 **Проверка публикации образа**
 
 ![alt text](img/image5945.png)
