@@ -827,7 +827,7 @@ cd /home/tenda/tenda-devops-diplom-app-cicd
 git tag 0.1
 git add .
 git commit -m 'version 0.1'
-git push origin 0.1
+git push origin main --tags
 ```
 
 ![alt text](img/image5931.png)
@@ -845,7 +845,7 @@ git push origin 0.1
 
 **1-я версия тестового приложения**
 
-![alt text](img/image491.png)
+![alt text](img/image5999.png)
 
 
 Изменяем код тестового приложения и отправляем изменения в репозиторий
