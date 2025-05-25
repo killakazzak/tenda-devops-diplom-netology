@@ -862,9 +862,6 @@ git push origin main --tags
 
 Автоматически запускается сборка и деплой новой версии приложения
 
-![alt text](img/image5960.png)
-
-
 **Проверка публикации образа**
 
 ![alt text](img/image5721.png)
