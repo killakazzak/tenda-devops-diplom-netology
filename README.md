@@ -780,7 +780,7 @@ kubectl get secrets -n gitlab-runner
 ```
 ![alt text](img/image561.png)
 
-- Установка `GitLab Runner` 
+#### Установка GitLab Runner 
 
 ```bash
 helm repo add gitlab https://charts.gitlab.io
