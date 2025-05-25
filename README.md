@@ -824,8 +824,10 @@ Pipeline разделен на 2е стадии:
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-app-cicd
-git tag 0.2
-git push origin 0.2
+git tag 0.1
+git add .
+git commit -m 'version 0.1'
+git push origin 0.1
 ```
 
 **Проверка публикации образа**
@@ -846,9 +848,11 @@ git push origin 0.2
 Изменяем код тестового приложения и отправляем изменения в репозиторий
 
 ```bash
-git tag 0.3
-git commit -m 'version 0.3'
-git push origin 0.3
+cd /home/tenda/tenda-devops-diplom-app-cicd
+git tag 0.2
+git add .
+git commit -m 'version 0.2'
+git push origin 0.2
 ```
 
 Автоматически запускается сборка и деплой новой версии приложения
