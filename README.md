@@ -858,7 +858,7 @@ git tag 0.2
 git push origin main --tags
 ```
 
-![alt text](img/image5712.png)
+![alt text](img/image5443.png)
 
 Автоматически запускается сборка и деплой новой версии приложения
 
@@ -875,7 +875,7 @@ git push origin main --tags
 
 #### Сборка прошла успешно
 
-![alt text](img/image5994.png)
+![alt text](img/image5317.png)
 
 **2-я версия тестового приложения**
 
