@@ -476,7 +476,7 @@ docker push killakazzak/tenda-devops-app:0.1
 ![alt text](img/image38.png)
 
 
-![alt text](img/image39.png)
+![alt text](img/image3999.png)
 
 ## Результаты выполнения 3-го этапа
 
@@ -819,6 +819,11 @@ Pipeline разделен на 2е стадии:
 **Проверка работоспособности `CI/CD конвеера`**
 
 Для запуска `CI/CD конвеера`, в целях тестирования, добавляем новый `tag`
+
+```bash
+/home/tenda/tenda-devops-diplom-app-cicd
+git tag -a v0.2 -m 'version 0.2'
+```
 
 ![alt text](img/image5998.png)
 
