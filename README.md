@@ -665,7 +665,7 @@ kubectl get svc -n ingress-nginx
 
 4. Тестовое приложение доступно по внешней публикации: http://denisten.ru/app
 
-![alt text](img/image491.png)
+![alt text](img/image4921.png)
 
 
 - Через Web-интерфейс выпустил `ssl-сертификат` для домена `*denisten.ru*` - данный сертификат можно использовать для организации доступа по https к развернутым приложениям.
