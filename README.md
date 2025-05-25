@@ -821,7 +821,7 @@ Pipeline разделен на 2е стадии:
 Для запуска `CI/CD конвеера`, в целях тестирования, добавляем новый `tag`
 
 ```bash
-/home/tenda/tenda-devops-diplom-app-cicd
+cd /home/tenda/tenda-devops-diplom-app-cicd
 git tag -a v0.2 -m 'version 0.2'
 ```
 
