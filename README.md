@@ -476,7 +476,7 @@ docker push killakazzak/tenda-devops-app:0.1
 ![alt text](img/image38.png)
 
 
-![alt text](img/image39.png)
+![alt text](img/image3999.png)
 
 ## Результаты выполнения 3-го этапа
 
