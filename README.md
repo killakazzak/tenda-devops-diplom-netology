@@ -813,13 +813,12 @@ kubectl get pods -n gitlab-runner
 
 Pipeline разделен на 2е стадии:
 
-- build
-- deploy
+- Этап сборки `build`
+- Этап деплоя `deploy`
 
 **Проверка работоспособности `CI/CD конвеера`**
 
-- Этап сборки `build`
-- Этап деплоя `deploy`
+Для запуска `CI/CD конвеера`, в целях тестирования, добавляем новый `tag`
 
 ![alt text](img/image5998.png)
 
