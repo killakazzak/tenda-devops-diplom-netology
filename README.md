@@ -858,6 +858,8 @@ git tag 0.2
 git push origin main --tags
 ```
 
+![alt text](img/image5712.png)
+
 Автоматически запускается сборка и деплой новой версии приложения
 
 ![alt text](img/image5960.png)
@@ -865,7 +867,7 @@ git push origin main --tags
 
 **Проверка публикации образа**
 
-![alt text](img/image5945.png)
+![alt text](img/image5721.png)
 
 **Проверка работоспособности `pipeline` **
 
