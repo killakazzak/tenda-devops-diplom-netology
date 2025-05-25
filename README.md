@@ -874,9 +874,15 @@ git push origin main --tags
 
 ![alt text](img/image5317.png)
 
+**Сайт доступен**
+
+http://denisten.ru/app
+
 **2-я версия тестового приложения**
 
 ![alt text](img/image5944.png)
+
+
 
 
 ---
