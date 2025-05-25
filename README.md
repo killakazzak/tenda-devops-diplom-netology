@@ -753,13 +753,13 @@ git push
 
 ### Этап 5.2 Установка GitLab Runner в Kubernetes кластер
 
-#### Создание namespace для GitLab Runner
+#### Создание `namespace` для GitLab Runner
 
 ```bash
 kubectl create ns gitlab-runner
 ```
 
-#### Получение токена
+#### Получение токена для регистрации GitLab Runner
 
 ![alt text](img/image5987.png)
 
@@ -767,7 +767,7 @@ kubectl create ns gitlab-runner
 export GITLAB_RUNNER_TOKEN="значение_токена"
 ```
 
-#### Создание secret для регистрации GitLab Runner
+#### Создание `secret` для установки GitLab Runner
 
 ```
 kubectl --namespace=gitlab-runner create secret generic runner-secret --from-literal=runner-registration-token="$GITLAB_RUNNER_TOKEN" --from-literal=runner-token=""
