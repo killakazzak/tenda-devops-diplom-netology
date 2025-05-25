@@ -799,7 +799,7 @@ kubectl get pods -n gitlab-runner
 
 ![alt text](img/image57.png)
 
-- Добавление переменных в настройки проекта
+#### Добавление переменных в настройки проекта
 
 ![alt text](img/image571.png)
 
