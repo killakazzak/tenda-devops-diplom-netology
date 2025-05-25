@@ -440,10 +440,11 @@ EXPOSE 80
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-app
-docker build -t killakazzak/tenda-devops-app:0.1 .
+docker build -t killakazzak/tenda-devops-app:0.0 .
 ```
 
-![alt text](img/image33.png)
+![alt text](img/gimage3339.png)
+
 
 **Проверка**
 
@@ -451,7 +452,8 @@ docker build -t killakazzak/tenda-devops-app:0.1 .
 docker images
 ```
 
-![alt text](img/image37.png)
+![alt text](img/image371.png)
+
 
 - Авторизация на github.com
 
@@ -470,13 +472,13 @@ docker login -u killakazzak
 #### Публикация образа на `dockerhub`
 
 ```bash
-docker push killakazzak/tenda-devops-app:0.1
+docker push killakazzak/tenda-devops-app:0.0
 ```
 
 ![alt text](img/image38.png)
 
+![alt text](img/image3965.png)
 
-![alt text](img/image3999.png)
 
 ## Результаты выполнения 3-го этапа
 
