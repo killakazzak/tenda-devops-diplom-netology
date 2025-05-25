@@ -823,6 +823,7 @@ Pipeline разделен на 2е стадии:
 ```bash
 cd /home/tenda/tenda-devops-diplom-app-cicd
 git tag -a v0.2 -m 'version 0.2'
+git push
 ```
 
 ![alt text](img/image5998.png)
