@@ -866,7 +866,7 @@ git push origin main --tags
 
 ![alt text](img/image5721.png)
 
-**Проверка работоспособности `pipeline` **
+**Проверка работоспособности `pipeline`**
 
 **Оба этапа `build` и `deploy` прошли без ошибок!**
 
