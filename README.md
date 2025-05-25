@@ -715,7 +715,7 @@ git push --set-upstream origin main
 
 ![alt text](img/image50.png)
 
-- Добавление удаленного репозитория с именем `origin`
+#### Добавление удаленного репозитория с именем `origin`
 
 ```bash
 git init --initial-branch=main
@@ -726,7 +726,7 @@ git push --set-upstream origin main
 ```
 ![alt text](img/image51.png)
 
-- Копирование тестового приложения в новый репозиторий
+#### Копирование тестового приложения в новый репозиторий
 
 ```bash
 cd /home/tenda/tenda-devops-diplom-app-cicd
