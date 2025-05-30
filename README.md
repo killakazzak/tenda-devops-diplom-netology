@@ -443,7 +443,7 @@ cd /home/tenda/tenda-devops-diplom-app
 docker build -t killakazzak/tenda-devops-app:0.0 .
 ```
 
-![alt text](img/gimage3339.png)
+![alt text](img/image3339.png)
 
 
 **Проверка**
@@ -918,3 +918,7 @@ http://denisten.ru/app
 - Web-интерфейс Grafana:                           http://denisten.ru
 - Пользователь: admin
 - Пароль: prom-operator
+
+6. Автоматизация
+- установка инфраструктуры: [deploy_infra.sh]()
+- удаление инфраструктуры: [destroy_infra.sh]()
