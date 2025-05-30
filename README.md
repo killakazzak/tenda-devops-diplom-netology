@@ -920,5 +920,5 @@ http://denisten.ru/app
 - Пароль: prom-operator
 
 6. Автоматизация
-- установка инфраструктуры: [deploy_infra.sh]()
-- удаление инфраструктуры: [destroy_infra.sh]()
+- установка инфраструктуры: [deploy_infra.sh](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/deploy_infra.sh)
+- удаление инфраструктуры: [destroy_infra.sh](https://github.com/killakazzak/tenda-devops-diplom-netology/blob/main/destroy_infra.sh)
